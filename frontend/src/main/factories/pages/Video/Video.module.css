@@ -1,0 +1,244 @@
+.effectIcon {
+  position: absolute;
+  top: 200.04px;
+  left: 0;
+  width: 1079.46px;
+  height: 879.96px;
+}
+.logofundotransparente1Icon {
+  position: absolute;
+  top: 8px;
+  left: 40px;
+  width: 101px;
+  height: 101px;
+  object-fit: cover;
+}
+.rectangleDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-100);
+  box-shadow: 0 28.539894104003906px 28.54px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(25px);
+  border: 2px solid var(--color-white);
+  box-sizing: border-box;
+  width: 511px;
+  height: 279.96px;
+}
+.playIcon {
+  position: absolute;
+  top: 112.12px;
+  left: 227.64px;
+  width: 56.4px;
+  height: 56.4px;
+  overflow: hidden;
+}
+.vdeoPlayer {
+  position: absolute;
+  top: 400px;
+  left: 705px;
+  width: 511px;
+  height: 279.96px;
+}
+.apsAVerificaoDosDadosE,
+.totalmenteAuditvelEComTod {
+  position: absolute;
+  top: 260px;
+  left: 591px;
+  font-weight: 500;
+  display: inline-block;
+  width: 738px;
+}
+.apsAVerificaoDosDadosE {
+  top: 700px;
+}
+.porFimOSistemaPermiteQue {
+  top: 860px;
+  left: 591px;
+  font-weight: 500;
+  width: 738px;
+}
+.hOME,
+.porFimOSistemaPermiteQue,
+.somosUmaPlataformaOpenSourc {
+  position: absolute;
+  display: inline-block;
+}
+.somosUmaPlataformaOpenSourc {
+  top: 212px;
+  left: 663px;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-audiowide);
+  text-align: left;
+  width: 595px;
+}
+.hOME {
+  top: 0;
+  left: 0;
+  font-weight: 500;
+}
+.home {
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 21px;
+}
+.buttons1,
+.div,
+.home {
+  position: absolute;
+}
+.buttons1 {
+  top: 4px;
+  left: 38px;
+  width: 60px;
+  height: 21px;
+}
+.div {
+  top: 3px;
+  left: 7px;
+  font-size: var(--font-size-xs);
+  line-height: 120%;
+  font-family: var(--font-font-awesome-6-pro);
+  display: inline-block;
+  width: 23px;
+}
+.frameDiv {
+  height: 30px;
+}
+.buttons2,
+.frameDiv,
+.frameDiv1,
+.home1,
+.rEGISTRO {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 103px;
+}
+.rEGISTRO {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons2,
+.frameDiv1,
+.home1 {
+  height: 21px;
+}
+.buttons2,
+.frameDiv1 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv1 {
+  top: 0;
+  left: 113px;
+  width: 139px;
+  height: 30px;
+}
+.buttons3,
+.cONSULTA,
+.frameDiv2,
+.home2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105px;
+}
+.cONSULTA {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons3,
+.frameDiv2,
+.home2 {
+  height: 21px;
+}
+.buttons3,
+.frameDiv2 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv2 {
+  top: 0;
+  left: 262px;
+  width: 139px;
+  height: 30px;
+}
+.buttons4,
+.frameDiv3,
+.home3,
+.vENDAECESSO {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 171px;
+}
+.vENDAECESSO {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons4,
+.frameDiv3,
+.home3 {
+  height: 21px;
+}
+.buttons4,
+.frameDiv3 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv3 {
+  top: 0;
+  left: 411px;
+  width: 215px;
+  height: 30px;
+}
+.buttons5,
+.fIIS,
+.home4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37px;
+}
+.fIIS {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons5,
+.home4 {
+  height: 21px;
+}
+.buttons5 {
+  top: 4px;
+  left: 38px;
+}
+.buttons,
+.frameDiv4 {
+  position: absolute;
+  top: 0;
+  left: 636px;
+  width: 80px;
+  height: 30px;
+}
+.buttons {
+  top: 34px;
+  left: 602px;
+  width: 716px;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-archivo);
+}
+.vdeo {
+  position: relative;
+  background: linear-gradient(107.53deg, #1f1f1f, #000);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}

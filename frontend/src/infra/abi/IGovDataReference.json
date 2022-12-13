@@ -1,0 +1,123 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IGovDataReference",
+  "sourceName": "contracts/interfaces/IGovDataReference.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "_idImob",
+          "type": "uint256"
+        }
+      ],
+      "name": "ConsultImobReg",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "_registryRural",
+          "type": "uint256"
+        }
+      ],
+      "name": "ConsultMapRural",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "_map",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "_registryRural",
+          "type": "uint256"
+        }
+      ],
+      "name": "confrontMapEvent",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_idImob",
+          "type": "uint256"
+        }
+      ],
+      "name": "ConsultRegular",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "regular",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_map",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_registryRural",
+          "type": "uint256"
+        }
+      ],
+      "name": "confrontMap",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "regular",
+          "type": "bool"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_registryRural",
+          "type": "uint256"
+        }
+      ],
+      "name": "consultMap",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "regular",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

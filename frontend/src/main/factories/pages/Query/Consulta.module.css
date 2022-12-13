@@ -1,0 +1,323 @@
+.effectIcon {
+  position: absolute;
+  top: 200.04px;
+  left: 0;
+  width: 1079.46px;
+  height: 879.96px;
+}
+.logofundotransparente1Icon {
+  position: absolute;
+  top: 8px;
+  left: 40px;
+  width: 101px;
+  height: 101px;
+  object-fit: cover;
+}
+.consulteSeOImvelEstRegu {
+  position: absolute;
+  top: 838px;
+  left: 481px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-poppins);
+  display: inline-block;
+  width: 738px;
+}
+.consulteOImvelOuConfronta {
+  margin-top: 168px;
+  top: 232px;
+  left: 381px;
+  font-size: 60px;
+  font-family: var(--font-audiowide);
+  display: inline-block;
+  width: 1159px;
+}
+.rectangleDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 14px;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(25px);
+  width: 866px;
+  height: 364px;
+}
+.insiraOLinkReferenteAoMap {
+  position: absolute;
+  top: 115px;
+  left: 481px;
+  font-size: 12px;
+  font-family: var(--font-poppins);
+  display: inline-block;
+}
+.rectangleDiv1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-white);
+  box-sizing: border-box;
+  width: 280px;
+  height: 48px;
+}
+.nmeroDaMatrcula {
+  position: absolute;
+  top: 13.5px;
+  left: 44px;
+  display: inline-block;
+}
+.group {
+  position: absolute;
+  top: 90px;
+  left: 106px;
+  width: 280px;
+  height: 48px;
+}
+.comarcaDoImvel {
+  position: absolute;
+  top: 13.5px;
+  left: 51px;
+  display: inline-block;
+}
+.group1,
+.group2,
+.rectangleDiv4 {
+  position: absolute;
+  top: 158px;
+  left: 106px;
+  width: 280px;
+  height: 48px;
+}
+.group2,
+.rectangleDiv4 {
+  left: 480px;
+}
+.rectangleDiv4 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-white);
+  box-sizing: border-box;
+  width: 191px;
+}
+.registrar {
+  position: absolute;
+  top: 13.5px;
+  left: 53px;
+  display: inline-block;
+}
+.group3 {
+  position: absolute;
+  top: 226px;
+  left: 151px;
+  width: 191px;
+  height: 48px;
+}
+.consultar {
+  position: absolute;
+  top: 13.5px;
+  left: 50px;
+  display: inline-block;
+}
+.group4,
+.rectangleDiv6 {
+  position: absolute;
+  top: 226px;
+  left: 524px;
+  width: 191px;
+  height: 48px;
+}
+.rectangleDiv6 {
+  top: 27px;
+  left: 432.5px;
+  background-color: rgba(255, 255, 255, 0.13);
+  width: 1px;
+  height: 310px;
+}
+.groupDiv {
+  position: absolute;
+  top: 404px;
+  left: 417px;
+  width: 866px;
+  height: 364px;
+  text-align: left;
+}
+.rectangleDiv7 {
+  position: absolute;
+  top: 541px;
+  left: 1008px;
+  background-color: var(--color-white);
+  width: 279px;
+  height: 1px;
+}
+.hOME {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+  display: inline-block;
+}
+.home {
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 21px;
+}
+.buttons1,
+.div,
+.home {
+  position: absolute;
+}
+.buttons1 {
+  top: 4px;
+  left: 38px;
+  width: 60px;
+  height: 21px;
+}
+.div {
+  top: 3px;
+  left: 7px;
+  font-size: var(--font-size-sm);
+  line-height: 120%;
+  font-family: var(--font-font-awesome-6-pro);
+  display: inline-block;
+  width: 23px;
+}
+.frameDiv {
+  height: 30px;
+}
+.buttons2,
+.frameDiv,
+.frameDiv1,
+.home1,
+.rEGISTRO {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 103px;
+}
+.rEGISTRO {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons2,
+.frameDiv1,
+.home1 {
+  height: 21px;
+}
+.buttons2,
+.frameDiv1 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv1 {
+  top: 0;
+  left: 113px;
+  width: 139px;
+  height: 30px;
+}
+.buttons3,
+.cONSULTA,
+.frameDiv2,
+.home2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105px;
+}
+.cONSULTA {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons3,
+.frameDiv2,
+.home2 {
+  height: 21px;
+}
+.buttons3,
+.frameDiv2 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv2 {
+  top: 0;
+  left: 262px;
+  width: 139px;
+  height: 30px;
+}
+.buttons4,
+.frameDiv3,
+.home3,
+.vENDAECESSO {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 171px;
+}
+.vENDAECESSO {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons4,
+.frameDiv3,
+.home3 {
+  height: 21px;
+}
+.buttons4,
+.frameDiv3 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv3 {
+  top: 0;
+  left: 411px;
+  width: 215px;
+  height: 30px;
+}
+.buttons5,
+.fIIS,
+.home4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37px;
+}
+.fIIS {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons5,
+.home4 {
+  height: 21px;
+}
+.buttons5 {
+  top: 4px;
+  left: 38px;
+}
+.buttons,
+.frameDiv4 {
+  position: absolute;
+  top: 0;
+  left: 636px;
+  width: 80px;
+  height: 30px;
+}
+.buttons {
+  top: 34px;
+  left: 602px;
+  width: 716px;
+  text-align: left;
+}
+.consulta {
+  position: relative;
+  background: linear-gradient(107.53deg, #1f1f1f 25.31%, #000);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-archivo);
+}

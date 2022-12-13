@@ -1,0 +1,307 @@
+.effectIcon {
+  position: absolute;
+  top: 200.04px;
+  left: 0;
+  width: 1079.46px;
+  height: 879.96px;
+}
+.logofundotransparente1Icon {
+  position: absolute;
+  top: 8px;
+  left: 40px;
+  width: 101px;
+  height: 101px;
+  object-fit: cover;
+}
+.conheaOsImveisDaUnio,
+.vENDAECESSO1 {
+  position: absolute;
+  display: inline-block;
+}
+.conheaOsImveisDaUnio {
+  top: 885px;
+  left: 604px;
+  font-weight: 500;
+  width: 738px;
+}
+.vENDAECESSO1 {
+  top: 119px;
+  left: 499px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-audiowide);
+  width: 922px;
+}
+.rectangleDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-md);
+  background-color: var(--color-gray-100);
+  backdrop-filter: blur(25px);
+  width: 1732px;
+  height: 650px;
+}
+.rectangleDiv1 {
+  position: absolute;
+  top: 48px;
+  left: 866px;
+  background-color: var(--color-gray-200);
+  width: 1px;
+  height: 553.57px;
+}
+.imveisDisponveisParaCess,
+.imveisVenda {
+  position: absolute;
+  top: 48px;
+  left: 303px;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-audiowide);
+  text-align: center;
+  display: inline-block;
+  width: 261px;
+}
+.imveisDisponveisParaCess {
+  left: 1039px;
+  width: 522px;
+}
+.rectangleIcon {
+  position: absolute;
+  top: 181px;
+  left: 38px;
+  border-radius: var(--br-sm);
+  width: 428px;
+  height: 334px;
+  object-fit: cover;
+}
+.rIP {
+  font-family: var(--font-poppins);
+}
+.span {
+  font-weight: 500;
+}
+.comarcaCuritibaPR {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.valorR800MilCreal {
+  margin: 0;
+}
+.rIP4004387ComarcaCuritiba {
+  position: absolute;
+  top: 447px;
+  left: 91px;
+  display: inline-block;
+  width: 279px;
+}
+.rectangleIcon1 {
+  position: absolute;
+  top: 181px;
+  left: 400px;
+  border-radius: var(--br-sm);
+  width: 428px;
+  height: 334px;
+  object-fit: cover;
+}
+.rIP43679ComarcaSoPaulo {
+  position: absolute;
+  top: 447px;
+  left: 453px;
+  display: inline-block;
+  width: 279px;
+}
+.rectangleIcon2 {
+  position: absolute;
+  top: 181px;
+  left: 1071px;
+  border-radius: var(--br-sm);
+  width: 428px;
+  height: 334px;
+  object-fit: cover;
+}
+.rIP890007ComarcaSoPaulo {
+  position: absolute;
+  top: 447px;
+  left: 1124px;
+  display: inline-block;
+  width: 279px;
+}
+.groupDiv,
+.hOME {
+  position: absolute;
+}
+.groupDiv {
+  top: 215px;
+  left: 94px;
+  width: 1732px;
+  height: 650px;
+  text-align: left;
+}
+.hOME {
+  top: 0;
+  left: 0;
+  font-weight: 500;
+  display: inline-block;
+}
+.home {
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 21px;
+}
+.buttons1,
+.div,
+.home {
+  position: absolute;
+}
+.buttons1 {
+  top: 4px;
+  left: 38px;
+  width: 60px;
+  height: 21px;
+}
+.div {
+  top: 3px;
+  left: 7px;
+  font-size: var(--font-size-xs);
+  line-height: 120%;
+  font-family: var(--font-font-awesome-6-pro);
+  display: inline-block;
+  width: 23px;
+}
+.frameDiv {
+  height: 30px;
+}
+.buttons2,
+.frameDiv,
+.frameDiv1,
+.home1,
+.rEGISTRO {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 103px;
+}
+.rEGISTRO {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons2,
+.frameDiv1,
+.home1 {
+  height: 21px;
+}
+.buttons2,
+.frameDiv1 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv1 {
+  top: 0;
+  left: 113px;
+  width: 139px;
+  height: 30px;
+}
+.buttons3,
+.cONSULTA,
+.frameDiv2,
+.home2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105px;
+}
+.cONSULTA {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons3,
+.frameDiv2,
+.home2 {
+  height: 21px;
+}
+.buttons3,
+.frameDiv2 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv2 {
+  top: 0;
+  left: 262px;
+  width: 139px;
+  height: 30px;
+}
+.vENDAECESSO2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 500;
+  display: inline-block;
+  width: 171px;
+}
+.buttons4,
+.frameDiv3,
+.home3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 171px;
+  height: 21px;
+}
+.buttons4,
+.frameDiv3 {
+  top: 4px;
+  left: 38px;
+}
+.frameDiv3 {
+  top: 0;
+  left: 411px;
+  width: 215px;
+  height: 30px;
+}
+.buttons5,
+.fIIS,
+.home4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37px;
+}
+.fIIS {
+  font-weight: 500;
+  display: inline-block;
+}
+.buttons5,
+.home4 {
+  height: 21px;
+}
+.buttons5 {
+  top: 4px;
+  left: 38px;
+}
+.buttons,
+.frameDiv4 {
+  position: absolute;
+  top: 0;
+  left: 636px;
+  width: 80px;
+  height: 30px;
+}
+.buttons {
+  top: 34px;
+  left: 602px;
+  width: 716px;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-family: var(--font-archivo);
+}
+.vENDAECESSO {
+  position: relative;
+  background: linear-gradient(107.53deg, #1f1f1f 25.31%, #000);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}
