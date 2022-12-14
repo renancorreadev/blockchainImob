@@ -1,20 +1,39 @@
 import  {BlockImobReadContract} from './blockimob-reads-calls'
+import {jest} from '@jest/globals'
 
 type SutTypes = {
-  getContractName: Promise<string | undefined>
+  sut: BlockImobReadContract
 }
 
 const makeSut = (): SutTypes => {
   const sut = new BlockImobReadContract()
-
   return {
-    getContractName: sut.getContractName()
+    sut
   }
 }
 
 describe('BlockImobReadContract', () => {
-  test('Shold function ContractName is called ', () => {
-    const {getContractName} = makeSut()
-    expect(getContractName).toHaveBeenCalled()
+  test('Shold function ContractName is called ',() => {
+    const {sut} = makeSut()
+    const getContractNameSpy = jest.spyOn(sut, 'getContractNameRequest')
+    sut.getContractNameRequest()
+    expect(getContractNameSpy).toHaveBeenCalled()
   });
+
+  test('should to called times in contract', () => {
+    const {sut} = makeSut()
+    const getContractNameSpy = jest.spyOn(sut, 'getContractNameRequest')
+    sut.getContractNameRequest()
+    expect(getContractNameSpy).toHaveBeenCalledTimes(1)
+   })
+
+   test('Shold the result is correct!', () => {
+    const {sut} = makeSut()
+
+    const getContractNameSpy = jest.spyOn(sut, 'getContractNameRequest')
+
+    getContractNameSpy.mockImplementationOnce(() => {
+      return new Promise(resolve => resolve('BlockImob'))
+    })
+   })
 });

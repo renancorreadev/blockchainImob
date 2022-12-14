@@ -4,6 +4,8 @@ import Background from '@assets/homebg.svg'
 import {Carousel} from '@presentation/components/Carousel'
 import {getContractName} from '@Callbacks'
 
+import {BlockImobReadContract} from '../../../../infra/callbacks/ReadContracts/blockimob-reads-calls'
+
 
 type CarouselItem = {
   title:  React.ElementType,
@@ -42,13 +44,16 @@ export const Home: React.FC = () => {
     },
   ]
 
-  const contractName = getContractName().then(txResult => {
-    return console.log(JSON.stringify(txResult))
-  }).catch((e) => {
-    console.log(e)
+  const test = new BlockImobReadContract()
+
+
+  const tes = test.getContractNameRequest().then((response) => {
+    return console.log(JSON.stringify(response))
   })
 
-  contractName
+
+
+  tes
 
   return (
     <HomeWrapper>

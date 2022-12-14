@@ -1,11 +1,11 @@
 
 
 import {getContractName} from './ReadFunctions/blockImobCallBacks'
-import {ImobReadContractInterface} from './protocols/blockimob-read-calls-protocols'
+// import {ImobReadContractInterface} from './protocols/blockimob-read-calls-protocols'
 
-export class BlockImobReadContract implements ImobReadContractInterface {
+export class BlockImobReadContract {
 
-  async getContractName() {
+  async getContractNameRequest(): Promise<string | undefined> {
     const contractName = await getContractName()
     return contractName
   }
