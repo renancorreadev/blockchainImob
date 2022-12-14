@@ -29,17 +29,21 @@
       "@infra": ["src/infra/"],
       "@test/*": ["./test/*"],
       "@pages/*": ["./src/presentation/pages/*"],
-      "@layout": ["src/main/factories/pages/layout"],
+      "@layout": ["./src/main/factories/pages/layout"],
       "@types/*": ["./src/@types/*"],
       "@contracts": ["src/@types/contracts/*"],
       "@utils": ["src/utils/"],
       "@utils/": ["src/utils/*"],
-      "@Callbacks": ["src/callbacks/"],
-      "@Callbacks/": ["src/callbacks/*"],
-      // "@hooks": ["./src/infra/hooks/*"],
-      // "@hooks/": ["./src/infra/hooks/"],
+      "@Callbacks": ["src/infra/callbacks/"],
+      "@Callbacks/": ["src/infra/callbacks/*"],
+      "@hooks": ["./src/infra/hooks/*"],
+      "@hooks/": ["./src/infra/hooks/"],
     }
   },
-  "include": ["src/**/*", "test/**/*"],
+  "include": [
+    "src/**/*",
+    "test/**/*",
+    ".jest/setup.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

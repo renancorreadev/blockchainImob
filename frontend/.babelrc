@@ -1,8 +1,16 @@
 {
+  "env": {
+    "test": {
+      "plugins": ["@babel/plugin-transform-modules-commonjs"]
+    }
+  },
   "plugins": [
     [
       "babel-plugin-styled-components"
     ]
   ],
-  "presets": ["@babel/preset-typescript"]
+  "presets": [
+    "@babel/preset-typescript",
+    "@babel/preset-env"
+  ]
 }

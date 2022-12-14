@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import {readContract} from '@wagmi/core'
-import {BlockImobContractConfig} from '@utils'
-import {abi} from '../abis/block-imob-abi'
+import {BlockImobContractConfig} from '../../../../utils/ContractConfigs'
+import {abi} from '../../abis/block-imob-abi'
 import { BigNumber } from 'ethers';
 
 
