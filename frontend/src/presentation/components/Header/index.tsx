@@ -1,6 +1,7 @@
 import {HeaderWrapper, NavWrapper, NavItem, Logo} from './styles'
 import { NavLink } from 'react-router-dom'
 import logoFile from '@assets/icons/Logo.svg'
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 import {
   ConsultIcon,
@@ -48,7 +49,9 @@ import {
           </NavLink>
         </NavWrapper>
 
-        <div></div>
+        <div>
+         <ConnectButton accountStatus={"address"} showBalance={true}/>
+        </div>
 
       </HeaderWrapper>
   )

@@ -31,6 +31,9 @@
       "@pages/*": ["./src/presentation/pages/*"],
       "@layout": ["src/main/factories/pages/layout"],
       "@types/*": ["./src/@types/*"],
+      "@contracts": ["./src/infra/protocols/contracts/*"],
+      "@hooks": ["./src/infra/hooks/*"],
+      "@hooks/": ["./src/infra/hooks/"],
     }
   },
   "include": ["src/**/*", "test/**/*"],

@@ -1,21 +1,11 @@
 import { RainbowKitProvider, getDefaultWallets } from '@rainbow-me/rainbowkit';
-import { chain, configureChains, createClient } from 'wagmi';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { infuraProvider } from 'wagmi/providers/infura';
-import { publicProvider } from 'wagmi/providers/public';
+import { configureChains, createClient } from 'wagmi';
+import { Alfajores, Celo } from "@celo/rainbowkit-celo/chains";
+import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
 export const { chains, provider, webSocketProvider } = configureChains(
-  [
-    chain.goerli,
-    chain.mainnet,
-    chain.polygon,
-    chain.polygonMumbai,
-  ],
-  [
-    alchemyProvider({ apiKey: process.env.ALCHEMY_GOERLI_KEY !== undefined ? process.env.ALCHEMY_GOERLI_KEY : '' }),
-    infuraProvider({apiKey: process.env.INFURA_KEY !== undefined ? process.env.INFURA_KEY : ''}),
-    publicProvider()
-  ]
+  [Alfajores, Celo],
+  [jsonRpcProvider({ rpc: (chain) => ({ http: chain.rpcUrls.default }) })]
 );
 
 export const { connectors } = getDefaultWallets({
