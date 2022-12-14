@@ -2,9 +2,8 @@ import React from 'react';
 import {HomeWrapper, InfoWrapper, ImageWrapper, Title, TextContent, Button, Image} from './styles'
 import Background from '@assets/homebg.svg'
 import {Carousel} from '@presentation/components/Carousel'
+import {getContractName} from '@Callbacks'
 
-
-import {useBlockImobReadCalls} from '@hooks/'
 
 type CarouselItem = {
   title:  React.ElementType,
@@ -43,11 +42,13 @@ export const Home: React.FC = () => {
     },
   ]
 
-  const {result} = useBlockImobReadCalls('contractName')
+  const contractName = getContractName().then(txResult => {
+    return console.log(JSON.stringify(txResult))
+  }).catch((e) => {
+    console.log(e)
+  })
 
- if(result) {
-   console.log(result)
- }
+  contractName
 
   return (
     <HomeWrapper>
