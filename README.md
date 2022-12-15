@@ -1,20 +1,55 @@
-# Block Imob - Gerenciamento de Imóveis
+<div align="center">
 
-<h1>
-    <img src="public/apresentacao.gif">
-</h1>
+[![Build Status](https://travis-ci.org/rmanguinho/clean-react.svg?branch=master)](https://travis-ci.org/rmanguinho/clean-react)
+[![Coverage Status](https://coveralls.io/repos/github/rmanguinho/clean-react/badge.svg?branch=master)](https://coveralls.io/github/rmanguinho/clean-react?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/rmanguinho/clean-react/badge.svg)](https://snyk.io/test/github/rmanguinho/clean-react)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+</div>
 
-<h3 align="center">
-    <a href="https://block-imov-skyxcripto.vercel.app/">Acessar a demonstração</a>
-<h3 >
+
+<div align='center'>
+
+# **Gerenciamento de Imóveis baseado em Blockchain**
+</div>
+
+
+
+[![alt text](./public/capa.png "Link para Protótipo")](https://www.udemy.com/course/react-com-mango/?referralCode=552F88858EAE76346C8B)
+
+Esse sistema faz o uso de blockChain no gerenciamento de imoveis usando o protocolo ERC721, erc4907 e tokenização para NFTs como registro e alterações cadastrais.
+
+O objetivo é implementar um sistema gerenciador de Registros Imoveis usando as tecnologias recentes. O Back-End desenvolvido em solidity juntamente com ethers, hardhat, typescript e compiladores em linguagem Solidity. 
+
+Para Front-End foi desenvolvida utilizando diversos metodologias como uma arquitetura bem definida e desacoplada, utilizando TDD (programação orientada a testes) como metodologia de trabalho, Clean Architecture para fazer a distribuição de responsabilidades em camadas, sempre seguindo os princípios do SOLID, DRY, YAGNI, KISS e aplicando Design Patterns para resolver alguns problemas comuns.
+<br /><br />
+
+<div align="center" style="width: 100%; display: block;">
+
+ <img src="./public/celo.png" width="300px" heigth="300px" />
+</div>
+
+
+
+</div>
+
+
+<div style="padding: 0 5rem;">
+
 
 # Indice
 
-- [Sobre](#-sobre)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Como baixar o projeto](#-como-baixar-o-projeto)
+- [Sobre](#ComoFunciona)
+- [Metodologias utilizadas](#MetodologiasUtilizadas)
+- [Tecnologias Utilizadas](#TecnologiasUtilizadas)
+- [Como executar o projeto](#Execute)
 
-## 🔖&nbsp; Sobre
+<div id="ComoFunciona">
+
+## 🔖&nbsp; Como Funciona?
+</div>
+
 
 A BlockImobGov é uma plataforma de consulta de regularidade
 baseada em oráculo, registro e gestão de imóveis da União
@@ -48,58 +83,83 @@ BlockImobGov Acelerando os negócios imobiliários do Governo!
 
 ---
 
+<div id="MetodologiasUtilizadas">
+
+ ## ㊎ Metodologias utilizadas para desenvolvimento
+</div>
+
+
+* TDD
+* Clean Architecture
+* DDD
+* Reactive Programming
+* Responsive Layout
+* Conventional Commits
+* GitFlow
+* Modular Design
+* Dependency Diagrams
+* Use Cases
+* Continuous Integration
+* Continuous Delivery
+* Continuous Deployment
+
+## 📚 Princípios
+
+* Single Responsibility Principle (SRP)
+* Open Closed Principle (OCP)
+* Liskov Substitution Principle (LSP)
+* Interface Segregation Principle (ISP)
+* Dependency Inversion Principle (DIP)
+* Separation of Concerns (SOC)
+* Don't Repeat Yourself (DRY)
+* You Aren't Gonna Need It (YAGNI)
+* Keep It Simple, Silly (KISS)
+* Composition Over Inheritance
+* Small Commits
+
+## ㌥ Design Patterns
+
+* Factory
+* Adapter
+* Composite
+* Decorator
+* Dependency Injection
+* Composition Root
+* Builder
+* Proxy
+
+<div id="TecnologiasUtilizadas">
+
 ## 🚀 Tecnologias utilizadas
+</div>
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias
 
-- [ReactJS]
-- [Solidity]
-- [Node.js]
-- [HTML]
-- [Javascript]
-- [Typescript]
-- [CSS]
-- [Hardhat Celo]
-
----
-Libs> 
-https://styled-components.com/ 
-https://docs.ethers.org/v5/
-https://swiperjs.com/react
----
-
----
-Metodologias e Designs
-
-TDD
-Clean Architecture
-DDD
-Reactive Programming
-Responsive Layout
-Conventional Commits
-GitFlow
-Modular Design
-Dependency Diagrams
-Use Cases
-Continuous Integration
-Continuous Delivery
-Continuous Deployment
-
+* [Typescript](https://www.typescriptlang.org/)
+* [React](https://www.typescriptlang.org/)
+* [React Testing Library](https://www.typescriptlang.org/)
+* [React Router DOM](https://reactrouter.com/en/main)
+* [Vitest](https://vitest.dev/)
+* [Git](https://git-scm.com/)
+* [Styled-Components](https://styled-components.com/)
+* [Yarn](https://yarnpkg.com/)
+* [Coveralls](https://coveralls.io/)
+* [Husky](https://typicode.github.io/husky/#/)
+* [Lint Staged](https://github.com/okonet/lint-staged)
+* [Eslint](https://eslint.org/)
+* [Celo Blockchain](https://celo.org/)
+  
 ---
 ---
-Contratos na https://alfajores.celoscan.io:
 
---- BlockImob Deployed to ---- 0xFa845dd448E7cB148Cfff1E00e5826da7cDc3EC0
----OracleGov Deployed to ---- 0x509caf51899D4F4C251077C0772bf74a7014ec64
---- ConsultImob Deployed to ---- 0xDE1655C7aCD88647b66392983830839213eBcb3D
---- Payments Management Deployed to ---- 0x1b7E45ad45157386b7CECc1c0381610Fe10f3f86
----
-## 🗂 Como baixar o projeto
+<div id="Execute">
+
+## 🗂 Como executar o Client (Front-End)
+</div>
 
 ```bash
 
     # Clonar o repositório
-    $ git clone https://github.com/EWCunha/block-imob.git
+    $ git clone https://github.com/renancorreadev/blockchainImob.git
 
     # Entrar no diretório
     $ cd frontend
@@ -113,4 +173,35 @@ Contratos na https://alfajores.celoscan.io:
 
 ---
 
-Desenvolvido por Equipe Imob Gov
+## 🗂 Como compilar os contratos e realizar deploy (back-end)
+
+```bash
+
+    # Clonar o repositório
+    $ git clone https://github.com/renancorreadev/blockchainImob.git
+
+    # Entrar no diretório
+    $ cd backend
+
+    # Instalar as dependências
+    $ yarn install
+
+    # Iniciar o projeto
+    $ yarn compile
+
+    # Deployar os contratos
+    $ yarn deploy
+
+    # Verificar os contratos
+    $ yarn verify
+```
+
+---
+
+<p align="center"> 
+
+    Desenvolvido por Renan César
+</p>
+
+</div>
+
