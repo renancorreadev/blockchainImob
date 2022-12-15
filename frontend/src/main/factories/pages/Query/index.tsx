@@ -1,9 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FunctionComponent ,useEffect,useState} from "react";
 import styles from "./Consulta.module.css";
 
 import {readContract} from '@wagmi/core'
-import {ConsultContractConfig} from '../../../../utils/ContractConfigs'
 import {abi} from '../../../../infra/callbacks/abis/oracle-gov-abi'
 import { BigNumber } from 'ethers';
 
@@ -32,9 +32,6 @@ export const Query: FunctionComponent = () => {
 
   const [openResultA, setOpenResultA] = useState(false)
   const [openResultB, setOpenResultB] = useState(false)
-
-  const [circleLoading, setCircleLoading] = useState(true);
-
 
   const address = '0xB5F72BB1BCbB9f9564cfc46cD74899227366428F'
 
@@ -219,7 +216,7 @@ export const Query: FunctionComponent = () => {
               <div className={styles.imageLoadingContainer}>
                 <CircleLoader
                   color="#5400d3"
-                  loading={circleLoading}
+                  loading={true}
                   size={450}
                   aria-label="Loading Spinner"
                   data-testid="loader"
@@ -250,7 +247,7 @@ export const Query: FunctionComponent = () => {
               <div className={styles.imageLoadingContainer}>
                 <CircleLoader
                   color="#5400d3"
-                  loading={circleLoading}
+                  loading={true}
                   size={450}
                   aria-label="Loading Spinner"
                   data-testid="loader"

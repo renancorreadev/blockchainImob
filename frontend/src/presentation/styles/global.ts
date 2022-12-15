@@ -72,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 50%;
     left: 22% !important;
     top: 100px !important;
-    height: 890px;
+    height: 730px;
   }
 
   .ReactModal__Content{

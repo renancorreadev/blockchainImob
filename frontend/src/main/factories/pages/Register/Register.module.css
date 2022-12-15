@@ -446,7 +446,7 @@
 
 .closeModal{
   position: absolute;
-  top: 0;
+  top: 83px;
   transform: translate(570px, -124px);
   right: 440px;
   width: 40px;
@@ -460,7 +460,7 @@
 
 .closeModaSucess{
   position: absolute;
-  top: 0;
+  top: 70px;
   transform: translate(470px, -34px);
   right: 440px;
   width: 40px;
