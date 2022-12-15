@@ -7,6 +7,7 @@ import { GlobalStyle } from '@presentation/styles/global'
 
 import "@fontsource/archivo";
 import "@fontsource/poppins";
+import '@fontsource/audiowide'
 
 function App (): JSX.Element {
   return (

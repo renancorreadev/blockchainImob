@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     background-position: center;
     margin: 0;
     line-height: normal;
+    height: 100%;
   }
 
   .mySwiper{
@@ -61,6 +62,23 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: start;
     justify-content: center;
+  }
+
+  .ReactModal__Overlay{
+    background-color: rgb(255 255 255 / 95%) !important;
+    border-radius: 40px;
+    height: 90%;
+    margin: 3rem;
+    width: 50%;
+    left: 22% !important;
+    top: 100px !important;
+    height: 890px;
+  }
+
+  .ReactModal__Content{
+    background-color: transparent !important;
+    border: none !important;
+    overflow: unset !important;
   }
 :root {
   /* fonts */

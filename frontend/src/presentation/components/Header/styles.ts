@@ -47,4 +47,8 @@ export const Logo = styled.img`
   margin-top: 8px;
 `
 
+export const WalletConnectWrapper = styled.div`
+  margin-right: 2rem;
+`
+
 

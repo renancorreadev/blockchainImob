@@ -1,4 +1,4 @@
-import {HeaderWrapper, NavWrapper, NavItem, Logo} from './styles'
+import {HeaderWrapper, NavWrapper, NavItem, Logo, WalletConnectWrapper} from './styles'
 import { NavLink } from 'react-router-dom'
 import logoFile from '@assets/icons/Logo.svg'
 import { ConnectButton } from '@rainbow-me/rainbowkit';
@@ -49,9 +49,9 @@ import {
           </NavLink>
         </NavWrapper>
 
-        <div>
+        <WalletConnectWrapper>
          <ConnectButton accountStatus={"address"} showBalance={true}/>
-        </div>
+        </WalletConnectWrapper>
 
       </HeaderWrapper>
   )

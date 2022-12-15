@@ -51,10 +51,6 @@ export const Home: React.FC = () => {
     return console.log(JSON.stringify(response))
   })
 
-
-
-  tes
-
   return (
     <HomeWrapper>
         <InfoWrapper>
