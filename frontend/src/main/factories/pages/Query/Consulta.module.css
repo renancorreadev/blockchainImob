@@ -111,3 +111,25 @@
   margin: 4rem 10rem;
   padding-bottom: 8rem;
 }
+
+.closeModal{
+  position: relative;
+  top: -151px;
+  left: 130%;
+  width: 39px;
+  height: 30px;
+}
+
+.status{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  bottom: 30px;
+}
+
+.imageLoadingContainer{
+  margin-top: 2rem;
+}
