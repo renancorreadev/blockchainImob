@@ -1,4 +1,4 @@
 export default interface consultContractInterface {
-  oracledAddress: string | null,
-  contractAddress: string |null;
+  oracledAddress: string | null;
+  contractAddress: string | null;
 }

@@ -25,11 +25,11 @@ export const Sellers: FunctionComponent = () => {
         />
         <div className={styles.rIP4004387ComarcaCuritiba}>
           <p className={styles.comarcaCuritibaPR}>
-            <b className={styles.rIP}>{`RIP: `}</b>
+            <b className={styles.rIP}>{"RIP: "}</b>
             <span className={styles.span}>4004387</span>
           </p>
           <p className={styles.comarcaCuritibaPR}>
-            <b className={styles.rIP}>{`Comarca: `}</b>
+            <b className={styles.rIP}>{"Comarca: "}</b>
             <span className={styles.span}>Curitiba/PR</span>
           </p>
           <p className={styles.valorR800MilCreal}>
@@ -44,11 +44,11 @@ export const Sellers: FunctionComponent = () => {
         />
         <div className={styles.rIP43679ComarcaSoPaulo}>
           <p className={styles.comarcaCuritibaPR}>
-            <b className={styles.rIP}>{`RIP: `}</b>
+            <b className={styles.rIP}>{"RIP: "}</b>
             <span className={styles.span}>43679</span>
           </p>
           <p className={styles.comarcaCuritibaPR}>
-            <b className={styles.rIP}>{`Comarca: `}</b>
+            <b className={styles.rIP}>{"Comarca: "}</b>
             <span className={styles.span}>São Paulo/SP</span>
           </p>
           <p className={styles.valorR800MilCreal}>
@@ -63,11 +63,11 @@ export const Sellers: FunctionComponent = () => {
         />
         <div className={styles.rIP890007ComarcaSoPaulo}>
           <p className={styles.comarcaCuritibaPR}>
-            <b className={styles.rIP}>{`RIP: `}</b>
+            <b className={styles.rIP}>{"RIP: "}</b>
             <span className={styles.span}>890007</span>
           </p>
           <p className={styles.comarcaCuritibaPR}>
-            <b className={styles.rIP}>{`Comarca: `}</b>
+            <b className={styles.rIP}>{"Comarca: "}</b>
             <span className={styles.span}>São Paulo/SP</span>
           </p>
           <p className={styles.valorR800MilCreal}>

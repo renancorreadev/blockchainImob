@@ -1,4 +1,3 @@
-
 export type ImobReadContractInterface = {
-  getContractName: () => Promise<string | undefined>
-}
+  getContractName: () => Promise<string | undefined>;
+};

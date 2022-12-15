@@ -1,13 +1,6 @@
-import {
-  HeaderWrapper,
-  NavWrapper,
-  NavItem,
-  Logo,
-  WalletConnectWrapper,
-} from "./styles";
+import { HeaderWrapper, NavWrapper, NavItem, Logo } from "./styles";
 import { NavLink } from "react-router-dom";
 import logoFile from "@assets/icons/Logo.svg";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import { ConsultIcon } from "./icons/ConsultIcon";
 import { HomeIcon } from "./icons/HomeIcon";
@@ -15,7 +8,7 @@ import { FillsIcon } from "./icons/FillsIcon";
 import { RegisterIcon } from "./icons/RegisterIcon";
 import { SellerIcon } from "./icons/SellersIcon";
 
-export const Header: React.FC = () => {
+export const HeaderTest: React.FC = () => {
   return (
     <HeaderWrapper>
       <Logo src={logoFile} alt="Logo" />
@@ -52,10 +45,6 @@ export const Header: React.FC = () => {
           </NavItem>
         </NavLink>
       </NavWrapper>
-
-      <WalletConnectWrapper>
-        <ConnectButton accountStatus={"address"} showBalance={true} />
-      </WalletConnectWrapper>
     </HeaderWrapper>
   );
 };

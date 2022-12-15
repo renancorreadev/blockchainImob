@@ -1,4 +1,4 @@
-import { SVGProps } from "react"
+import { SVGProps } from "react";
 
 export const ConsultIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -13,7 +13,4 @@ export const ConsultIcon = (props: SVGProps<SVGSVGElement>) => (
       fill="#fff"
     />
   </svg>
-)
-
-
-
+);

@@ -19,8 +19,6 @@ export const Fiis: FunctionComponent = () => {
         <div className={styles.rectangleDiv1} />
         <b className={styles.investir}>Investir</b>
       </div>
-
     </div>
   );
 };
-

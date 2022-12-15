@@ -1,5 +1,5 @@
-import { RainbowKitProvider, getDefaultWallets } from '@rainbow-me/rainbowkit';
-import { configureChains, createClient } from 'wagmi';
+import { RainbowKitProvider, getDefaultWallets } from "@rainbow-me/rainbowkit";
+import { configureChains, createClient } from "wagmi";
 import { Alfajores, Celo } from "@celo/rainbowkit-celo/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 
@@ -9,7 +9,7 @@ export const { chains, provider, webSocketProvider } = configureChains(
 );
 
 export const { connectors } = getDefaultWallets({
-  appName: 'OmnesBlockchain App',
+  appName: "OmnesBlockchain App",
   chains,
 });
 
@@ -20,4 +20,4 @@ export const wagmiClient = createClient({
   webSocketProvider,
 });
 
-export default  RainbowKitProvider
+export default RainbowKitProvider;

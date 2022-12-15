@@ -1,4 +1,4 @@
-import { SVGProps } from "react"
+import { SVGProps } from "react";
 
 export const RegisterIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -13,6 +13,4 @@ export const RegisterIcon = (props: SVGProps<SVGSVGElement>) => (
       fill="#fff"
     />
   </svg>
-)
-
-
+);

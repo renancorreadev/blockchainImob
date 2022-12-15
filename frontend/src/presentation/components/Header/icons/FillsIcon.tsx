@@ -1,4 +1,4 @@
-import { SVGProps } from "react"
+import { SVGProps } from "react";
 
 export const FillsIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -13,5 +13,4 @@ export const FillsIcon = (props: SVGProps<SVGSVGElement>) => (
       fill="#fff"
     />
   </svg>
-)
-
+);

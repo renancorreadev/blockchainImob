@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
 import styles from "../../Register.module.css";
-import {ContainerWrapper} from './styles'
+import { ContainerWrapper } from "./styles";
 
 export const RegisterHeader: React.FC = () => {
-
   return (
     <ContainerWrapper>
       <img className={styles.effectIcon} alt="" src="/effect.svg" />
@@ -15,5 +14,5 @@ export const RegisterHeader: React.FC = () => {
         Registro com conta autorizada
       </div>
     </ContainerWrapper>
-  )
-}
+  );
+};
