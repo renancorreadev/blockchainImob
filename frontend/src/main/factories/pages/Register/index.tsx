@@ -102,8 +102,6 @@ export const Register: FunctionComponent = () => {
     }
   }, [isStarted, mintStatus]);
 
-
-  console.log(modalIsOpen)
   return (
     <>
       <div
