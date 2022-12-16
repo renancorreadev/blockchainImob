@@ -1,4 +1,4 @@
-import { describe, test, vi, beforeEach, Mocked } from "vitest";
+import { describe, test, vi, beforeEach } from "vitest";
 import { mockFetch } from "vi-fetch";
 
 import { Connect } from "@test/utils/connect";
