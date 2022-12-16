@@ -5,7 +5,7 @@ import Modal from "react-modal";
 
 /**Web3 imports */
 import { BlockImobContractConfig } from "../../../../utils/ContractConfigs";
-import { abi } from "../../../../infra/callbacks/abis/block-imob-abi";
+import { abi } from "@utils/formatAbi/oracle-gov-abi";
 import { useAccount } from "wagmi";
 import { writeContract } from "@wagmi/core";
 import { ethers } from "ethers";

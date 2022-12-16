@@ -4,7 +4,7 @@ import { FunctionComponent, useEffect, useState } from "react";
 import styles from "./Consulta.module.css";
 
 import { readContract } from "@wagmi/core";
-import { abi } from "../../../../infra/callbacks/abis/oracle-gov-abi";
+import { abi } from "@utils/formatAbi/oracle-gov-abi";
 import { BigNumber } from "ethers";
 
 import Modal from "react-modal";
