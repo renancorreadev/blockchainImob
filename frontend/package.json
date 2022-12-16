@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Clean Web3 Vite",
   "type": "module",
-
   "scripts": {
     "generate": "typechain --target=ethers-v5 './abi/*.json'",
     "prepare": "cd .. && husky install frontend/.husky",
@@ -99,6 +98,7 @@
     "typedoc-plugin-missing-exports": "^0.22.6",
     "typedoc-theme-hierarchy": "^1.2.1",
     "typescript": "4.7.3",
+    "vi-fetch": "^0.8.0",
     "vite": "^3.2.3",
     "vite-tsconfig-paths": "^4.0.1",
     "vitest": "^0.25.8"

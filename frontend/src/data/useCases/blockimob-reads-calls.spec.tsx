@@ -1,30 +1,66 @@
-import { BlockImobReadContract } from "./blockimob-reads-calls";
-import { describe, test, vi, beforeEach } from "vitest";
+import { describe, test, vi, beforeEach, Mocked } from "vitest";
+import { mockFetch } from "vi-fetch";
 
 import { Connect } from "@test/utils/connect";
 import { render } from "@test/index";
+import { BlockImobContractConfig } from "@utils";
 
 type SutTypes = {
-  sut: BlockImobReadContract;
+  sut: BlockImobReadContractMock;
 };
 
+type GetUserAllowedIn = `0x${string}`;
+
+type MockFetch = {
+  getContractNameRequest(): Promise<string>;
+  getUserAllowed(addressProvider: GetUserAllowedIn): Promise<boolean>;
+};
+
+const address = BlockImobContractConfig.contractAddress as GetUserAllowedIn;
+
+class BlockImobReadContractMock implements MockFetch {
+  address!: GetUserAllowedIn;
+  resultGetAllowed = true;
+
+  constructor(address?: GetUserAllowedIn) {
+    if (address) {
+      this.address = address;
+    }
+  }
+
+  async getContractNameRequest(): Promise<string> {
+    return new Promise<string>((resolve) => {
+      resolve("BlockImob");
+    });
+  }
+
+  async getUserAllowed(address: GetUserAllowedIn): Promise<boolean> {
+    return new Promise<boolean>((resolve) => {
+      this.address = address;
+      resolve(this.resultGetAllowed);
+    });
+  }
+}
+
 const makeSut = (): SutTypes => {
-  const sut = new BlockImobReadContract();
+  const blockImobReadInstance = new BlockImobReadContractMock();
+
+  const sut = vi.mocked(blockImobReadInstance);
   return {
     sut,
   };
 };
 
-describe("BlockImobReadContract", () => {
-  render(
-    <>
-      <Connect />
-    </>
-  );
+render(
+  <>
+    <Connect />
+  </>
+);
 
+describe("Should Contract Name Callback is Success", () => {
   beforeEach(() => {
     // Reset the mock
-    vi.clearAllMocks();
+    mockFetch.clearAll();
   });
 
   test("Shold function ContractName is called ", async () => {
@@ -36,23 +72,27 @@ describe("BlockImobReadContract", () => {
     expect(getContractNameSpy).toHaveBeenCalled();
   });
 
-  test("Should ensure to called times in contract", () => {
+  test("Shold the result of ContractName  returns is correct!", async () => {
     const { sut } = makeSut();
-    const getContractNameSpy = vi.spyOn(sut, "getContractNameRequest");
 
-    sut.getContractNameRequest();
-    sut.getContractNameRequest();
-    //toHaveBeenCalledTimes to ensure that a mock function got called exact number of times.
-    expect(getContractNameSpy).toHaveBeenCalledTimes(2);
+    const test = sut.getContractNameRequest();
+
+    expect(await test).toBe("BlockImob");
+  });
+});
+
+describe("Should getUserAllowed Callback is Success", () => {
+  beforeEach(() => {
+    // Reset the mock
+
+    mockFetch.clearAll();
   });
 
-  test("Shold the result is correct!", () => {
+  test("Shold the result of getUserAllowed returns is correct!", async () => {
     const { sut } = makeSut();
 
-    const resultMock = vi
-      .fn()
-      .mockImplementation(async () => sut.getContractNameRequest());
+    const test = sut.getUserAllowed(address);
 
-    resultMock.mockReturnValue("BlockImob");
+    expect(await test).toBe(true);
   });
 });

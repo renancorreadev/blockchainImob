@@ -11,6 +11,8 @@ import {
 import Background from "@assets/homebg.svg";
 import { Carousel } from "@presentation/components/Carousel";
 
+import { BlockImobReadContract } from "@data/useCases/blockimob-reads-calls";
+
 type CarouselItem = {
   title: React.ElementType;
   textContent: React.ElementType;
@@ -75,6 +77,23 @@ export const Home: React.FC = () => {
       button: () => <Button>Vídeo explicativo</Button>,
     },
   ];
+
+  async function test() {
+    const tx = new BlockImobReadContract();
+
+    const resul = await tx
+      .getUserAllowed({
+        addressProvider: "0x431143aa81Aa54fB4157edcb8879d23c1eff9c77",
+      })
+      .then((res) => {
+        console.log(res);
+        return res;
+      });
+
+    return resul;
+  }
+
+  console.log(test());
 
   return (
     <HomeWrapper>
