@@ -17,10 +17,10 @@ class EthersProviderWrapper extends providers.StaticJsonRpcProvider {
 
 export function getProvider({
   chains = allChains,
-  chainId,
+  chainId = 31337,
 }: { chains?: Chain[]; chainId?: number } = {}) {
   const chain = allChains.find((x) => x.id === chainId) ?? chainLookup.foundry;
-  const url = chainLookup.foundry.rpcUrls.default;
+  const url = "http://127.0.0.1:8545/";
   const provider = new EthersProviderWrapper(url, getNetwork(chain));
   provider.pollingInterval = 1_000;
   return Object.assign(provider, { chains });

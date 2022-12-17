@@ -33,6 +33,7 @@
     "test": "hardhat test",
     "local-node": "hardhat node",
     "deploy": "hardhat run scripts/deploy.ts --network alfajores",
+    "deploy-local": "hardhat run scripts/deploy.ts --network hardhat",
     "verify": "hardhat verify --network alfajores 0x28569C119E7a6A59F96818914b9af7B777c31394 --constructor-args config/ContractArguments/BlockImobContractArguments.ts"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 import consultContractInterface from '../../lib/ConsultdContractInterface'
 
 export const ConsultContractConfig: consultContractInterface = {
-  oracledAddress: '0xB5F72BB1BCbB9f9564cfc46cD74899227366428F',
-  contractAddress: '0x1AAb126C4c3e233fE56F11402b6Af1e27a93811c'
+  oracledAddress: '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512',
+  contractAddress: '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0'
 }
 
