@@ -11,7 +11,7 @@ import {
 import Background from "@assets/homebg.svg";
 import { Carousel } from "@presentation/components/Carousel";
 
-import { BlockImobReadContract } from "@data/useCases/blockimob-reads-calls";
+import { BlockImobReadCalls } from "@data/useCases/block-Imob-reads";
 
 type CarouselItem = {
   title: React.ElementType;
@@ -79,16 +79,13 @@ export const Home: React.FC = () => {
   ];
 
   async function test() {
-    const tx = new BlockImobReadContract();
-
-    const resul = await tx
-      .getUserAllowed({
-        addressProvider: "0x431143aa81Aa54fB4157edcb8879d23c1eff9c77",
-      })
-      .then((res) => {
-        console.log(res);
-        return res;
-      });
+    const tx = new BlockImobReadCalls();
+    const address =
+      "0x431143aa81Aa54fB4157edcb8879d23c1eff9c77" as `0x${string}`;
+    const resul = await tx.getUserAllowed(address).then((res) => {
+      console.log(res);
+      return res;
+    });
 
     return resul;
   }
