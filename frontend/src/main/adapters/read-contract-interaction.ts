@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { readContract } from "@wagmi/core";
 import { BigNumber } from "ethers";
 import { BlockImobContractConfig } from "@utils/ContractConfigs";
@@ -12,8 +10,39 @@ type GetIsApproveForAllType = {
 
 const address = BlockImobContractConfig.contractAddress as string;
 
-export namespace BlockImobReadCalls {
-  export const getContractName = async (): Promise<string> => {
+type getQueryFromTokenIdPromiseReturnType = {
+  district: string;
+  registry: BigNumber;
+};
+
+interface BlockImobReadCallsInterface {
+  getContractName: () => Promise<string>;
+  getUserAllowed: (addressProvider: `0x${string}`) => Promise<boolean>;
+  getBalanceOf: (addressProvider: `0x${string}`) => Promise<BigNumber>;
+  getApproved: (numberToApproval: BigNumber) => Promise<`0x${string}`>;
+  getIsApproveForAll({
+    firstAddress,
+    secondAddress,
+  }: GetIsApproveForAllType): Promise<boolean>;
+  getTokenURI(tokenURI: BigNumber): Promise<string>;
+  getBaseURI(): Promise<string>;
+  getOwnerOf(AddressToQuery: BigNumber): Promise<`0x${string}`>;
+  getNextTokenId(): Promise<BigNumber>;
+  getQueryFromTokenId(
+    tokenID: BigNumber
+  ): Promise<getQueryFromTokenIdPromiseReturnType>;
+  getQueryToTokenId(
+    TokenAddress: string,
+    TokenId: BigNumber
+  ): Promise<BigNumber>;
+  getReturnAllowed(addressToQuery: `0x${string}`): Promise<boolean>;
+  uriFromQuery(uriToQuery: string, ID: BigNumber): Promise<string>;
+  userExpires(tokenIDUser: BigNumber): Promise<BigNumber>;
+  userOf(tokenIDUser: BigNumber): Promise<`0x${string}`>;
+}
+
+export class BlockImobReadCalls implements BlockImobReadCallsInterface {
+  getContractName = async (): Promise<string> => {
     try {
       const txResult = await readContract({
         address,
@@ -29,9 +58,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getUserAllowed = async (
-    addressProvider: `0x${string}`
-  ): Promise<boolean> => {
+  getUserAllowed = async (addressProvider: `0x${string}`): Promise<boolean> => {
     try {
       const txResult = await readContract({
         address,
@@ -48,9 +75,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getBalanceOf = async (
-    addressProvider: `0x${string}`
-  ): Promise<BigNumber> => {
+  getBalanceOf = async (addressProvider: `0x${string}`): Promise<BigNumber> => {
     try {
       const txResult = await readContract({
         address,
@@ -66,9 +91,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getApproved = async (
-    numberToApproval: BigNumber
-  ): Promise<`0x${string}`> => {
+  getApproved = async (numberToApproval: BigNumber): Promise<`0x${string}`> => {
     try {
       const txResult = await readContract({
         address,
@@ -85,7 +108,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getTokenURI = async (tokenURI: BigNumber): Promise<string> => {
+  getTokenURI = async (tokenURI: BigNumber): Promise<string> => {
     try {
       const txResult = await readContract({
         address,
@@ -102,7 +125,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getIsApproveForAll = async ({
+  getIsApproveForAll = async ({
     firstAddress,
     secondAddress,
   }: GetIsApproveForAllType): Promise<boolean> => {
@@ -121,7 +144,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getBaseURI = async (): Promise<string> => {
+  getBaseURI = async (): Promise<string> => {
     try {
       const txResult = await readContract({
         address,
@@ -137,9 +160,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getOwnerOf = async (
-    AddressToQuery: BigNumber
-  ): Promise<`0x${string}`> => {
+  getOwnerOf = async (AddressToQuery: BigNumber): Promise<`0x${string}`> => {
     try {
       const txResult = await readContract({
         address,
@@ -155,7 +176,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getNextTokenId = async (): Promise<BigNumber> => {
+  getNextTokenId = async (): Promise<BigNumber> => {
     try {
       const txResult = await readContract({
         address,
@@ -170,7 +191,9 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getQueryFromTokenId = async (tokenID: BigNumber) => {
+  getQueryFromTokenId = async (
+    tokenID: BigNumber
+  ): Promise<getQueryFromTokenIdPromiseReturnType> => {
     try {
       const txResult = await readContract({
         address,
@@ -186,8 +209,8 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getQueryToTokenId = async (
-    TokenAddress: string,
+  getQueryToTokenId = async (
+    TokenAddress: `0x${string}`,
     TokenId: BigNumber
   ): Promise<BigNumber> => {
     try {
@@ -205,7 +228,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const getReturnAllowed = async (
+  getReturnAllowed = async (
     addressToQuery: `0x${string}`
   ): Promise<boolean> => {
     try {
@@ -223,10 +246,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const uriFromQuery = async (
-    uriToQuery: string,
-    ID: BigNumber
-  ): Promise<string> => {
+  uriFromQuery = async (uriToQuery: string, ID: BigNumber): Promise<string> => {
     try {
       const txResult = await readContract({
         address,
@@ -242,9 +262,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const userExpires = async (
-    tokenIDUser: BigNumber
-  ): Promise<BigNumber> => {
+  userExpires = async (tokenIDUser: BigNumber): Promise<BigNumber> => {
     try {
       const txResult = await readContract({
         address,
@@ -260,9 +278,7 @@ export namespace BlockImobReadCalls {
     return new Error() as never;
   };
 
-  export const userOf = async (
-    tokenIDUser: BigNumber
-  ): Promise<`0x${string}`> => {
+  userOf = async (tokenIDUser: BigNumber): Promise<`0x${string}`> => {
     try {
       const txResult = await readContract({
         address,
