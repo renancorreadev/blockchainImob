@@ -3,8 +3,8 @@ import { vi } from "vitest";
 import { BlockImobWrites, MintDataReturnType } from "./block-imob-writes";
 
 const makeSut = () => {
+  /** Constants values  */
   const _mock = new BlockImobWrites();
-
   const returnPromised: MintDataReturnType = {
     blockNumber: 1,
     gasUsed: BigNumber.from(30000000),
@@ -30,7 +30,7 @@ const makeSut = () => {
   };
 };
 
-describe("Shold be call transaction", () => {
+describe("Shold be callbacks contracts write transactions", () => {
   afterEach(() => {
     vi.restoreAllMocks();
   });
