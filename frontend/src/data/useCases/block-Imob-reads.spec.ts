@@ -1,12 +1,7 @@
 import { describe, expect, vi } from "vitest";
 import { accounts } from "@test/utils/mockProvider";
-import { BlockImobReadCalls } from "./read-contract-interaction";
+import { BlockImobReadCalls } from "./block-Imob-reads";
 import { BigNumber } from "ethers";
-
-type getQueryFromTokenIdPromiseReturnType = {
-  district: string;
-  registry: BigNumber;
-};
 
 type MakeSutTypes = {
   _mock: BlockImobReadCalls;
@@ -21,6 +16,11 @@ type MakeSutTypes = {
   };
   baseURIToken: string;
   userExpiredReturn: BigNumber;
+};
+
+export type getQueryFromTokenIdPromiseReturnType = {
+  district: string;
+  registry: BigNumber;
 };
 
 const makeSut = (): MakeSutTypes => {
