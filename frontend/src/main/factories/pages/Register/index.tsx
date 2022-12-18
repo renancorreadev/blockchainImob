@@ -3,14 +3,12 @@ import { FunctionComponent, useEffect, useState } from "react";
 import styles from "./Register.module.css";
 import Modal from "react-modal";
 
-/**Web3 imports */
-import { BlockImobContractConfig } from "../../../../utils/ContractConfigs";
-import { abi } from "@utils/formatAbi/block-imob-abi";
 import { useAccount } from "wagmi";
-import { writeContract } from "@wagmi/core";
-import { ethers } from "ethers";
+import { BigNumber } from "ethers";
 import { success } from "./utils/effect";
 import { CircleLoader } from "react-spinners";
+
+import { BlockImobWrites } from "@data/useCases/block-imob-writes";
 
 const customStyles = {
   content: {
@@ -24,9 +22,13 @@ const customStyles = {
 };
 
 export const Register: FunctionComponent = () => {
+  /** connectWeb3 */
+  const { address } = useAccount();
+  let subtitle: any;
+
   const [oficio, setOficio] = useState("");
   const [comarcaimovel, setComarcaimovel] = useState("");
-  const [numero, setNumero] = useState<number>();
+  const [registroValue, SetRegistroValue] = useState<number>();
   const [modalIsOpen, setmodalIsOpen] = useState(false);
 
   const [isMinted, setIsMinted] = useState(false);
@@ -35,6 +37,8 @@ export const Register: FunctionComponent = () => {
   const [mintStatus, setMintStatus] = useState(0);
 
   const [circleLoading, setCircleLoading] = useState(true);
+
+  const blockWriteInstance = new BlockImobWrites();
 
   /** Modals Configs */
   function closeModal() {
@@ -47,40 +51,34 @@ export const Register: FunctionComponent = () => {
     subtitle.style.color = "#f00";
   }
 
-  /** connectWeb3 */
-  const { address } = useAccount();
-  const contractAddress = BlockImobContractConfig.contractAddress as string;
-  let subtitle: any;
-
   async function mint() {
+    const registro = BigNumber.from(registroValue);
     if (address) {
-      SetisStarted(true);
-      try {
-        const { wait } = await writeContract({
-          mode: "recklesslyUnprepared",
-          address: contractAddress,
-          abi: abi,
-          functionName: "mint",
-          args: [address, oficio, comarcaimovel, ethers.BigNumber.from(numero)],
-        });
-        /**mint & set varibables */
-        await wait().then((tx) => {
-          setTransationHash(tx.transactionHash);
-          SetisStarted(false);
+      await blockWriteInstance
+        .mint({
+          address,
+          oficio,
+          comarcaimovel,
+          registro,
+        })
+        .then((txData) => {
+          if (txData) {
+            setTransationHash(txData.transactionHash);
+            SetisStarted(false);
 
-          if (tx.status) {
-            setMintStatus(tx.status);
+            if (txData.status) {
+              setMintStatus(txData.status);
+            }
+
+            setmodalIsOpen(false);
           }
-
-          setmodalIsOpen(false);
+        })
+        .finally(() => {
+          setIsMinted(true);
         });
-
-        setIsMinted(true);
-      } catch (e) {
-        console.log(e);
-        setmodalIsOpen(false);
-      }
     }
+
+    return null;
   }
 
   useEffect(() => {
@@ -138,7 +136,7 @@ export const Register: FunctionComponent = () => {
                 required
                 className={styles.input}
                 placeholder="Número"
-                onChange={(e) => setNumero(parseInt(e.target.value))}
+                onChange={(e) => SetRegistroValue(parseInt(e.target.value))}
               />
             </div>
           </div>
