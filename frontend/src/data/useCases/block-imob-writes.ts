@@ -1,32 +1,15 @@
 import { writeContract } from "@wagmi/core";
 import { BlockImobContractConfig } from "@utils/ContractConfigs";
 import { abi } from "@utils/formatAbi/block-imob-abi";
-import { BigNumber } from "ethers";
+import { TransactionError } from "@domain/errors/error-transaction";
+import {
+  MintArgsInterface,
+  ApproveArgsInterface,
+  TransactionReceipType,
+  WriteCallbackPromise,
+} from "@data/protocols";
 
 const { contractAddress } = BlockImobContractConfig;
-
-interface MintArgsInterface {
-  address: `0x${string}`;
-  oficio: string;
-  comarcaimovel: string;
-  registro: BigNumber;
-}
-type MintPromiseReturn = {
-  transactionHash: string;
-  status?: number | undefined;
-  blockNumber: number;
-  gasUsed: BigNumber;
-  type: number;
-  confirmations: number;
-};
-export type MintDataReturnType = {
-  blockNumber: number;
-  gasUsed: BigNumber;
-  transactionHash: string;
-  status: number | undefined;
-  type: number;
-  confirmations: number;
-};
 
 export class BlockImobWrites {
   mint = async ({
@@ -34,7 +17,7 @@ export class BlockImobWrites {
     oficio,
     comarcaimovel,
     registro,
-  }: MintArgsInterface): Promise<MintDataReturnType | undefined> => {
+  }: MintArgsInterface): Promise<TransactionReceipType | undefined> => {
     try {
       const { wait } = await writeContract({
         mode: "recklesslyUnprepared",
@@ -44,8 +27,8 @@ export class BlockImobWrites {
         args: [address, oficio, comarcaimovel, registro],
       });
 
-      const txResult = await wait().then((txResult: MintPromiseReturn) => {
-        const data: MintDataReturnType = {
+      const txResult = await wait().then((txResult: WriteCallbackPromise) => {
+        const data: TransactionReceipType = {
           blockNumber: txResult.blockNumber,
           gasUsed: txResult.gasUsed,
           transactionHash: txResult.transactionHash,
@@ -60,6 +43,47 @@ export class BlockImobWrites {
       });
 
       return txResult.data;
+    } catch (errorTx) {
+      console.log(errorTx);
+    }
+
+    return;
+  };
+
+  approve = async ({
+    spender,
+    id,
+  }: ApproveArgsInterface): Promise<TransactionReceipType | undefined> => {
+    try {
+      const { wait } = await writeContract({
+        mode: "recklesslyUnprepared",
+        address: contractAddress,
+        abi: abi,
+        functionName: "approve",
+        args: [spender, id],
+      });
+
+      const txResult = await wait().then((txResult: WriteCallbackPromise) => {
+        const data: TransactionReceipType = {
+          blockNumber: txResult.blockNumber,
+          gasUsed: txResult.gasUsed,
+          transactionHash: txResult.transactionHash,
+          status: txResult.status,
+          type: txResult.type,
+          confirmations: txResult.confirmations,
+        };
+
+        return {
+          data,
+        };
+      });
+
+      switch (txResult.data.status) {
+        case 0:
+          throw new TransactionError();
+        default:
+          return txResult.data;
+      }
     } catch (errorTx) {
       console.log(errorTx);
     }
