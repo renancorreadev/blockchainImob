@@ -40,6 +40,8 @@ export default defineConfig({
       "@utils/": path.resolve(__dirname, "./src/utils/*"),
       "@Callbacks": path.resolve(__dirname, "./src/infra/callbacks/"),
       "@Callbacks/": path.resolve(__dirname, "./src/infra/callbacks/*"),
+      "@domain/*": path.resolve(__dirname, "./src/domain/*"),
+      "@domain": path.resolve(__dirname, "./src/domain/"),
     },
   },
 });
