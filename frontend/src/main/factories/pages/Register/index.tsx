@@ -21,8 +21,6 @@ const customStyles = {
   },
 };
 
-import { writeContract } from "@wagmi/core";
-
 export const Register: FunctionComponent = () => {
   /** connectWeb3 */
   const { address } = useAccount();
@@ -83,19 +81,6 @@ export const Register: FunctionComponent = () => {
     return null;
   }
 
-  // async function approve() {
-  //   const id = BigNumber.from(1);
-  //   const spender = address;
-  //   if (spender) {
-  //     await blockWriteInstance.approve({
-  //       spender,
-  //       id,
-  //     });
-  //   }
-
-  //   return null;
-  // }
-
   useEffect(() => {
     if (isMinted) {
       success();
@@ -114,7 +99,7 @@ export const Register: FunctionComponent = () => {
 
   return (
     <>
-      {/* <div className={styles.groupForm} id="register">
+      <div className={styles.groupForm} id="register">
         <h1 className={styles.title}>Registro com conta autorizada</h1>
 
         <div className={styles.rectangleDiv}>
@@ -247,8 +232,7 @@ export const Register: FunctionComponent = () => {
             </Modal>
           </>
         )}
-      </div> */}
-      <button onClick={() => mint()}>Approve</button>
+      </div>
     </>
   );
 };
