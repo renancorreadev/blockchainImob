@@ -1,9 +1,9 @@
 import { BigNumber } from "ethers";
-import { ConsultImobRead } from "@data/useCases/consult-imob-reads";
+import { ConsultGovReads } from "@data/useCases/consult-gov-reads";
 import { vi } from "vitest";
 
 export type MockParams = {
-  _mockGetConsultContract: ConsultImobRead;
+  _mockGetConsultContract: ConsultGovReads;
   args: BigNumber;
 };
 

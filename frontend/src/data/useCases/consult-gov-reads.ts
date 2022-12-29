@@ -1,23 +1,25 @@
 import { readContract } from "@wagmi/core";
 import { BigNumber } from "ethers";
-import { ConsultContractConfig } from "@utils/ContractConfigs";
+
+import { ConsultContractConfig as OracleContract } from "@utils/ContractConfigs";
 import { abi } from "@utils/formatAbi/oracle-gov-abi";
 
-const address = ConsultContractConfig.contractAddress as string;
+const { oracledAddress } = OracleContract;
+const address = oracledAddress;
 
-interface ConsultImobReadInterface {
+interface ConsultGovReadsInterface {
   getConsultRegular: (_idImob: BigNumber) => Promise<boolean>;
   getConsultMap: (_registryRural: BigNumber) => Promise<boolean>;
 }
 
-export class ConsultImobRead implements ConsultImobReadInterface {
-  getConsultRegular = async (_idImob: BigNumber): Promise<boolean> => {
+export class ConsultGovReads implements ConsultGovReadsInterface {
+  getConsultRegular = async (_idImobToken: BigNumber): Promise<boolean> => {
     try {
       const txResult = await readContract({
         address,
         abi,
         functionName: "ConsultRegular",
-        args: [_idImob],
+        args: [_idImobToken],
       });
 
       return txResult;
