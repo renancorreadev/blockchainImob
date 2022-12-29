@@ -1,5 +1,5 @@
 import { describe, expect, Mock, vi } from "vitest";
-import { ConsultImobRead } from "./consult-imob-reads";
+import { ConsultGovReads } from "./consult-gov-reads";
 import { BigNumber } from "ethers";
 import {
   getConsultRegular,
@@ -8,14 +8,14 @@ import {
 } from "../tests/mock-consult.reads";
 
 type MakeSutTypes = {
-  _mock: ConsultImobRead;
+  _mock: ConsultGovReads;
   fakeID: BigNumber;
   getConsultRegular: Mock<[mockParams: MockParams], Promise<boolean>>;
   getConsultMap: Mock<[mockParams: MockParams], Promise<boolean>>;
 };
 
 const makeSut = (): MakeSutTypes => {
-  const _mock = new ConsultImobRead();
+  const _mock = new ConsultGovReads();
   const fakeID = BigNumber.from(1);
 
   return {
