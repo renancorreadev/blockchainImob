@@ -40,7 +40,7 @@ contract OracleGov is IGovDataReference{
   external 
   override OnlyAllow returns(bool, string memory){
     if(compareStrings(mapRegular, _map)==true){
-    // registryMapRegular[_registryRural] = true;
+    registryMapRegular[_registryRural] = true;
     ++numberMapRegularRural;
     return(true, "regular");
     }

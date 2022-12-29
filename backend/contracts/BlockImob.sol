@@ -162,5 +162,5 @@ contract BlockImob is ERC4907, IBlockImob {
     function changeAllow(address _addr, bool _state) onlyAllowed external {
         allowed[_addr] = _state;
     }
-
+    
 }

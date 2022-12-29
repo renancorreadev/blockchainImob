@@ -1,8 +1,8 @@
 import PaymentsContractInterface from '../../lib/PaymentsContractInterface'
 
 export const PaymentsdContractConfig: PaymentsContractInterface = {
-  blockImobAddress: '0x5FbDB2315678afecb367f032d93F642f64180aa3',
-  consultAddress: '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0',
-  contractAddress: '0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9'
+  blockImobAddress: '0xA851a4E4c3900760A2beEd509667B41E08f04e45',
+  consultAddress: '0x78FB3AD940969D3b2bb469173ba8264e0Ea404bc',
+  contractAddress: '0xbED8ED1B7fB7cD74759127fd7709A12ae39EA317'
 }
 

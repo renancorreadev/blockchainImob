@@ -3,7 +3,7 @@ import BlockImobContractInterface from '../../lib/BlockImobContractInterface';
 export const BlockImobContractConfig: BlockImobContractInterface = {
   contractName: 'BlockImob',
   ContractSymbol: 'SPU',
-  contractAddress: "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  contractAddress: "0xA851a4E4c3900760A2beEd509667B41E08f04e45"
 };
 
 
