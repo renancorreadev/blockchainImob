@@ -1,9 +1,23 @@
 import { BigNumber } from "ethers";
 
-export type getQueryFromTokenIdPromiseReturnType = {
-  district: string;
-  registry: BigNumber;
-};
+/** Models */
+import {
+  GetApprovedReturn,
+  GetBaseURIPromiseReturn,
+  GetIsApproveForAllReturn,
+  GetNextTokenIdPromiseReturn,
+  UriFromQueryPromiseReturn,
+  GetQueryFromTokenIdPromiseReturn,
+  GetQueryToTokenIdPromiseReturn,
+  GetReturnAllowedPromiseReturn,
+  GetOwnerOfPromiseReturn,
+  GetBalanceOfReturn,
+  GetUserAllowedReturn,
+  GetContractNameReturn,
+  getTokenURIReturn,
+  UserExpiresPromiseReturn,
+  UserOfPromiseReturn,
+} from "@data/models";
 
 export type GetIsApproveForAllType = {
   firstAddress: `0x${string}`;
@@ -11,27 +25,27 @@ export type GetIsApproveForAllType = {
 };
 
 export type BlockImobReadCallsInterface = {
-  getContractName: () => Promise<string>;
-  getUserAllowed: (addressProvider: `0x${string}`) => Promise<boolean>;
-  getBalanceOf: (addressProvider: `0x${string}`) => Promise<BigNumber>;
-  getApproved: (numberToApproval: BigNumber) => Promise<`0x${string}`>;
+  getContractName: () => GetContractNameReturn;
+  getUserAllowed: (addressProvider: `0x${string}`) => GetUserAllowedReturn;
+  getBalanceOf: (addressProvider: `0x${string}`) => GetBalanceOfReturn;
+  getApproved: (numberToApproval: BigNumber) => GetApprovedReturn;
   getIsApproveForAll({
     firstAddress,
     secondAddress,
-  }: GetIsApproveForAllType): Promise<boolean>;
-  getTokenURI(tokenURI: BigNumber): Promise<string>;
-  getBaseURI(): Promise<string>;
-  getOwnerOf(AddressToQuery: BigNumber): Promise<`0x${string}`>;
-  getNextTokenId(): Promise<BigNumber>;
-  getQueryFromTokenId(
-    tokenID: BigNumber
-  ): Promise<getQueryFromTokenIdPromiseReturnType>;
+  }: GetIsApproveForAllType): GetIsApproveForAllReturn;
+  getTokenURI(tokenURI: BigNumber): getTokenURIReturn;
+  getBaseURI(): GetBaseURIPromiseReturn;
+  getOwnerOf(AddressToQuery: BigNumber): GetOwnerOfPromiseReturn;
+  getNextTokenId(): GetNextTokenIdPromiseReturn;
+  getQueryFromTokenId(tokenID: BigNumber): GetQueryFromTokenIdPromiseReturn;
   getQueryToTokenId(
     TokenAddress: string,
     TokenId: BigNumber
-  ): Promise<BigNumber>;
-  getReturnAllowed(addressToQuery: `0x${string}`): Promise<boolean>;
-  uriFromQuery(uriToQuery: string, ID: BigNumber): Promise<string>;
-  userExpires(tokenIDUser: BigNumber): Promise<BigNumber>;
-  userOf(tokenIDUser: BigNumber): Promise<`0x${string}`>;
+  ): GetQueryToTokenIdPromiseReturn;
+  getReturnAllowed(
+    addressToQuery: `0x${string}`
+  ): GetReturnAllowedPromiseReturn;
+  uriFromQuery(uriToQuery: string, ID: BigNumber): UriFromQueryPromiseReturn;
+  userExpires(tokenIDUser: BigNumber): UserExpiresPromiseReturn;
+  userOf(tokenIDUser: BigNumber): UserOfPromiseReturn;
 };

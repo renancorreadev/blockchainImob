@@ -1,49 +1,49 @@
 import { readContract } from "@wagmi/core";
 import { BigNumber } from "ethers";
 
+/** Contract configuration */
 import { ConsultContractConfig as OracleContract } from "@utils/ContractConfigs";
 import { abi } from "@utils/formatAbi/oracle-gov-abi";
+
+//errors class
+import { ConsultGovError } from "@infra/errors";
+
+//protocols
+import { ConsultGovReadsInterface } from "@data/protocols/consult-gov-reads-protocol";
 
 const { oracledAddress } = OracleContract;
 const address = oracledAddress;
 
-interface ConsultGovReadsInterface {
-  getConsultRegular: (_idImob: BigNumber) => Promise<boolean>;
-  getConsultMap: (_registryRural: BigNumber) => Promise<boolean>;
-}
-
 export class ConsultGovReads implements ConsultGovReadsInterface {
-  getConsultRegular = async (_idImobToken: BigNumber): Promise<boolean> => {
+  getConsultRegular = async (_idImobToken: number): Promise<boolean> => {
+    const idImobToken = BigNumber.from(Number(_idImobToken));
     try {
       const txResult = await readContract({
         address,
         abi,
         functionName: "ConsultRegular",
-        args: [_idImobToken],
+        args: [idImobToken],
       });
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      throw new ConsultGovError();
     }
-
-    return new Error() as never;
   };
 
-  getConsultMap = async (_registryRural: BigNumber): Promise<boolean> => {
+  getConsultMap = async (_registryRural: number): Promise<boolean> => {
+    const registryRural = BigNumber.from(Number(_registryRural));
     try {
       const txResult = await readContract({
         address,
         abi,
         functionName: "consultMap",
-        args: [_registryRural],
+        args: [registryRural],
       });
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      throw new ConsultGovError();
     }
-
-    return new Error() as never;
   };
 }

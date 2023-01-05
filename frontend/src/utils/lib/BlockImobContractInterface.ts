@@ -2,5 +2,5 @@
 export default interface BlockImobContractInterface {
   contractName: string;
   ContractSymbol: string;
-  contractAddress: string;
+  contractAddress: `0x${string}`;
 }

@@ -4,15 +4,33 @@ import { BlockImobContractConfig } from "@utils/ContractConfigs";
 import { abi } from "@utils/formatAbi/block-imob-abi";
 
 import {
+  GetApprovedReturn,
+  GetBaseURIPromiseReturn,
+  GetIsApproveForAllReturn,
+  GetNextTokenIdPromiseReturn,
+  UriFromQueryPromiseReturn,
+  GetQueryFromTokenIdPromiseReturn,
+  GetQueryToTokenIdPromiseReturn,
+  GetReturnAllowedPromiseReturn,
+  GetOwnerOfPromiseReturn,
+  GetBalanceOfReturn,
+  GetUserAllowedReturn,
+  GetContractNameReturn,
+  getTokenURIReturn,
+  UserExpiresPromiseReturn,
+  UserOfPromiseReturn,
+} from "@data/models";
+
+import {
   BlockImobReadCallsInterface,
   GetIsApproveForAllType,
-  getQueryFromTokenIdPromiseReturnType,
 } from "../protocols/block-Imob-reads-protocol";
+import { BlockImobError } from "@infra/errors/block-imob-error";
 
 const address = BlockImobContractConfig.contractAddress as string;
 
 export class BlockImobReadCalls implements BlockImobReadCallsInterface {
-  getContractName = async (): Promise<string> => {
+  getContractName = async (): GetContractNameReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -22,13 +40,13 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-
-    return new Error() as never;
   };
 
-  getUserAllowed = async (addressProvider: `0x${string}`): Promise<boolean> => {
+  getUserAllowed = async (
+    addressProvider: `0x${string}`
+  ): GetUserAllowedReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -39,13 +57,11 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-
-    return new Error() as never;
   };
 
-  getBalanceOf = async (addressProvider: `0x${string}`): Promise<BigNumber> => {
+  getBalanceOf = async (addressProvider: `0x${string}`): GetBalanceOfReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -55,13 +71,11 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
       });
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-
-    return new Error() as never;
   };
 
-  getApproved = async (numberToApproval: BigNumber): Promise<`0x${string}`> => {
+  getApproved = async (numberToApproval: BigNumber): GetApprovedReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -72,13 +86,11 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-
-    return new Error() as never;
   };
 
-  getTokenURI = async (tokenURI: BigNumber): Promise<string> => {
+  getTokenURI = async (tokenURI: BigNumber): getTokenURIReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -89,16 +101,14 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-
-    return new Error() as never;
   };
 
   getIsApproveForAll = async ({
     firstAddress,
     secondAddress,
-  }: GetIsApproveForAllType): Promise<boolean> => {
+  }: GetIsApproveForAllType): GetIsApproveForAllReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -108,13 +118,11 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
       });
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-
-    return new Error() as never;
   };
 
-  getBaseURI = async (): Promise<string> => {
+  getBaseURI = async (): GetBaseURIPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -124,13 +132,11 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-
-    return new Error() as never;
   };
 
-  getOwnerOf = async (AddressToQuery: BigNumber): Promise<`0x${string}`> => {
+  getOwnerOf = async (AddressToQuery: BigNumber): GetOwnerOfPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -141,12 +147,11 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-    return new Error() as never;
   };
 
-  getNextTokenId = async (): Promise<BigNumber> => {
+  getNextTokenId = async (): GetNextTokenIdPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -156,14 +161,13 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-    return new Error() as never;
   };
 
   getQueryFromTokenId = async (
     tokenID: BigNumber
-  ): Promise<getQueryFromTokenIdPromiseReturnType> => {
+  ): GetQueryFromTokenIdPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -174,15 +178,14 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-    return new Error() as never;
   };
 
   getQueryToTokenId = async (
     TokenAddress: `0x${string}`,
     TokenId: BigNumber
-  ): Promise<BigNumber> => {
+  ): GetQueryToTokenIdPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -193,14 +196,13 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-    return new Error() as never;
   };
 
   getReturnAllowed = async (
     addressToQuery: `0x${string}`
-  ): Promise<boolean> => {
+  ): GetReturnAllowedPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -211,12 +213,14 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-    return new Error() as never;
   };
 
-  uriFromQuery = async (uriToQuery: string, ID: BigNumber): Promise<string> => {
+  uriFromQuery = async (
+    uriToQuery: string,
+    ID: BigNumber
+  ): UriFromQueryPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -227,12 +231,11 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-    return new Error() as never;
   };
 
-  userExpires = async (tokenIDUser: BigNumber): Promise<BigNumber> => {
+  userExpires = async (tokenIDUser: BigNumber): UserExpiresPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -243,12 +246,11 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-    return new Error() as never;
   };
 
-  userOf = async (tokenIDUser: BigNumber): Promise<`0x${string}`> => {
+  userOf = async (tokenIDUser: BigNumber): UserOfPromiseReturn => {
     try {
       const txResult = await readContract({
         address,
@@ -259,8 +261,7 @@ export class BlockImobReadCalls implements BlockImobReadCallsInterface {
 
       return txResult;
     } catch (e) {
-      console.log(e);
+      new BlockImobError();
     }
-    return new Error() as never;
   };
 }

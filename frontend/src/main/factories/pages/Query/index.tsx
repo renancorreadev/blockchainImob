@@ -1,104 +1,35 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useState } from "react";
 import styles from "./Consulta.module.css";
 
-import { readContract } from "@wagmi/core";
-import { abi } from "@utils/formatAbi/oracle-gov-abi";
-import { BigNumber } from "ethers";
-
-import Modal from "react-modal";
-import { CircleLoader } from "react-spinners";
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+import { ConsultGovReads, ConsultGovWrites } from "@data/useCases/";
 
 export const Query: FunctionComponent = () => {
-  const [matricula, setMatricula] = useState("");
-  const [numeroMatricula, setNumeroMatricula] = useState("");
-  const [uriMap, setURIMap] = useState("");
-  const [resultConsultRegular, setResultConsultRegular] = useState(false);
-  const [resultConfrontMap, setResultConfrontMap] = useState<any>();
+  const consultReadInstance = new ConsultGovReads();
+  const consultWriteInstance = new ConsultGovWrites();
 
-  const [openResultA, setOpenResultA] = useState(false);
-  const [openResultB, setOpenResultB] = useState(false);
+  /** Input Values States  */
+  const [inputMatricula, setInputMatricula] = useState("");
+  const [inputURIMap, setInputURIMap] = useState("");
+  const [inputNumeroMatricula, setInputNumeroMatricula] = useState("");
 
-  const address = "0xB5F72BB1BCbB9f9564cfc46cD74899227366428F";
+  /** Result Values States */
+  const [resultMatricula, setResultMatricula] = useState<boolean | undefined>();
 
-  const getRegular = async (): Promise<boolean | undefined> => {
-    try {
-      const txResult = await readContract({
-        address,
-        abi,
-        functionName: "ConsultRegular",
-        args: [BigNumber.from(matricula)],
+  /** Functions */
+  const handleConsult = async () => {
+    await consultReadInstance
+      .getConsultRegular(Number(inputMatricula))
+
+      .then((result) => {
+        setResultMatricula(result);
       });
-
-      return txResult;
-    } catch (e) {
-      console.log(e);
-    }
-
-    return;
   };
-
-  const getconfrontMap = async () => {
-    try {
-      const txResult = await readContract({
-        address,
-        abi,
-        //@ts-ignore
-        functionName: "confrontMap",
-        args: [uriMap, BigNumber.from(numeroMatricula)],
-      });
-
-      return txResult;
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  async function handleGetRegular() {
-    const result = (await getRegular()) as boolean;
-    setResultConsultRegular(result);
-
-    setOpenResultA(true);
-  }
-
-  async function handleGetConfrontMap() {
-    const resulttx = await getconfrontMap().then((result) => {
-      return result;
+  const handleConsultMap = async () => {
+    await consultWriteInstance.confrontMap({
+      _registryRuralIPFS: inputURIMap,
+      _registryRural: Number(inputNumeroMatricula),
     });
-
-    setResultConfrontMap(resulttx);
-
-    setOpenResultB(true);
-  }
-  const [modalIsOpen, setmodalIsOpen] = useState(false);
-
-  function closeModal() {
-    setmodalIsOpen(false);
-  }
-
-  useEffect(() => {
-    if (openResultA || !openResultA) {
-      setmodalIsOpen(true);
-    }
-  }, [openResultA]);
-
-  useEffect(() => {
-    if (openResultB || !openResultB) {
-      setmodalIsOpen(true);
-    }
-  }, [openResultB]);
+  };
 
   return (
     <div className={styles.Container}>
@@ -108,12 +39,10 @@ export const Query: FunctionComponent = () => {
         </h6>
       </div>
 
-      <div className={styles.rectangleDiv7} />
-
       <div className={styles.Querys}>
         <div className={styles.Quad1}>
           <input
-            onChange={(e) => setMatricula(e.target.value)}
+            onChange={(e) => setInputMatricula(e.target.value)}
             type="text"
             id="name"
             name="numberOficio"
@@ -122,13 +51,17 @@ export const Query: FunctionComponent = () => {
             placeholder="Numero da Matricula: "
           />
 
-          <button className={styles.group3} onClick={handleGetRegular}>
+          <button className={styles.group3} onClick={handleConsult}>
             <span>Consultar</span>
           </button>
+
+          {/** Returns */}
+          {resultMatricula && <p>Imovel esta regularizado</p>}
+          {!resultMatricula && <p>Imovel não esta regularizado</p>}
         </div>
         <div className={styles.Quad2}>
           <input
-            onChange={(e) => setURIMap(e.target.value)}
+            onChange={(e) => setInputURIMap(e.target.value)}
             type="text"
             id="name"
             name="numberOficio"
@@ -138,7 +71,7 @@ export const Query: FunctionComponent = () => {
           />
 
           <input
-            onChange={(e) => setNumeroMatricula(e.target.value)}
+            onChange={(e) => setInputNumeroMatricula(e.target.value)}
             type="text"
             id="name"
             name="numberOficio"
@@ -147,7 +80,7 @@ export const Query: FunctionComponent = () => {
             placeholder="Numero da Matricula: "
           />
 
-          <button className={styles.group3} onClick={handleGetConfrontMap}>
+          <button className={styles.group3} onClick={handleConsultMap}>
             <span>Consultar</span>
           </button>
         </div>
@@ -160,74 +93,6 @@ export const Query: FunctionComponent = () => {
           autorizados.
         </p>
       </div>
-
-      {openResultA && (
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Modal Minting"
-        >
-          <button
-            onClick={() => setmodalIsOpen(!modalIsOpen)}
-            className={styles.closeModal}
-          >
-            X
-          </button>
-          <div className={styles.status}>
-            <h2 className={styles.titleModal}>Resultado</h2>
-            <p className={styles.paragraphModal}>
-              {resultConsultRegular
-                ? "O imóvel está regularizado"
-                : "O imóvel não está regularizado"}
-            </p>
-
-            <div className={styles.imageLoadingContainer}>
-              <CircleLoader
-                color="#5400d3"
-                loading={true}
-                size={450}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
-            </div>
-          </div>
-        </Modal>
-      )}
-
-      {openResultB && (
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Modal Minting"
-        >
-          <button
-            onClick={() => setmodalIsOpen(!modalIsOpen)}
-            className={styles.closeModal}
-          >
-            X
-          </button>
-          <div className={styles.status}>
-            <h2 className={styles.titleModal}>Resultado</h2>
-            <p className={styles.paragraphModal}>
-              {resultConfrontMap
-                ? "O imóvel está regularizado"
-                : "O imóvel não está regularizado"}
-            </p>
-
-            <div className={styles.imageLoadingContainer}>
-              <CircleLoader
-                color="#5400d3"
-                loading={true}
-                size={450}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
-            </div>
-          </div>
-        </Modal>
-      )}
     </div>
   );
 };

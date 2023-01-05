@@ -1,85 +1,35 @@
 import { writeContract } from "@wagmi/core";
-import { ConsultContractConfig } from "@utils/ContractConfigs";
+import {
+  ConsultContractConfig,
+  BlockImobContractConfig,
+} from "@utils/ContractConfigs";
 import { abi } from "@utils/formatAbi/oracle-gov-abi";
 import { TransactionError } from "@domain/errors/error-transaction";
 import { BigNumber } from "ethers";
 
 const { oracledAddress } = ConsultContractConfig;
+const { contractAddress } = BlockImobContractConfig;
 
-/**
- * `WriteCallbackPromise` is a type that represents a callback function that
- * returns a promise that resolves to an object with the following properties:
- * `transactionHash`, `status`, `blockNumber`, `gasUsed`, `type`, and
- * `confirmations`.
- * @property {string} transactionHash - The hash of the transaction that was sent.
- * @property {number | undefined} status - The status of the transaction. This is
- * only available for Ethereum.
- * @property {number} blockNumber - The block number that the transaction was mined
- * in.
- * @property {BigNumber} gasUsed - The amount of gas used by the transaction.
- * @property {number} type - The type of the transaction. This is a number that
- * represents the type of transaction.
- * @property {number} confirmations - The number of confirmations the transaction
- * has received.
- */
-export type WriteCallbackPromise = {
-  transactionHash: string;
-  status?: number | undefined;
-  blockNumber: number;
-  gasUsed: BigNumber;
-  type: number;
-  confirmations: number;
-};
-
-/**
- * `TransactionReceipType` is an object with a `blockNumber`, `gasUsed`,
- * `transactionHash`, `status`, `type`, and `confirmations` property.
- * @property {number} blockNumber - The block number that the transaction was mined
- * in.
- * @property {BigNumber} gasUsed - The amount of gas used by the transaction.
- * @property {string} transactionHash - The hash of the transaction.
- * @property {number | undefined} status - 0 = failed, 1 = success, undefined =
- * pending
- * @property {number} type - The type of transaction. This is a number that
- * represents the type of transaction.
- * @property {number} confirmations - The number of confirmations the transaction
- * has.
- */
-export type TransactionReceipType = {
-  blockNumber: number;
-  gasUsed: BigNumber;
-  transactionHash: string;
-  status: number | undefined;
-  type: number;
-  confirmations: number;
-};
-
-type setRegularArgs = {
-  _idImob: BigNumber;
-  _regular: boolean;
-  _imobcontract: `0x${string}`;
-};
-
-type setMappingRuralArgs = {
-  _registryRuralIPFS: string;
-};
-
-type confrontMapArgs = {
-  _registryRuralIPFS: string;
-  _registryRural: BigNumber;
-};
+/** Protocols */
+import {
+  confrontMapArgs,
+  setMappingRuralArgs,
+  setRegularArgs,
+  TransactionReceipType,
+  WriteCallbackPromise,
+} from "@data/protocols/consult-gov-write-protocol";
 
 export class ConsultGovWrites {
   setRegular = async (
     params: setRegularArgs
-  ): Promise<TransactionReceipType> => {
+  ): Promise<TransactionReceipType | undefined> => {
     try {
       const { wait } = await writeContract({
         mode: "recklesslyUnprepared",
         address: oracledAddress,
         abi: abi,
         functionName: "setRegular",
-        args: [params._idImob, params._regular, params._imobcontract],
+        args: [params._idImob, params._regular, contractAddress],
       });
 
       const txResult = await wait().then((txResult: WriteCallbackPromise) => {
@@ -106,13 +56,11 @@ export class ConsultGovWrites {
     } catch (errorTx) {
       console.log(errorTx);
     }
-
-    return new Error() as never;
   };
 
   setMapRural = async (
     params: setMappingRuralArgs
-  ): Promise<TransactionReceipType> => {
+  ): Promise<TransactionReceipType | undefined> => {
     try {
       const { wait } = await writeContract({
         mode: "recklesslyUnprepared",
@@ -146,20 +94,20 @@ export class ConsultGovWrites {
     } catch (errorTx) {
       console.log(errorTx);
     }
-
-    return new Error() as never;
   };
 
   confrontMap = async (
     params: confrontMapArgs
-  ): Promise<TransactionReceipType> => {
+  ): Promise<TransactionReceipType | undefined> => {
+    const registryRural = BigNumber.from(params._registryRural);
+
     try {
       const { wait } = await writeContract({
         mode: "recklesslyUnprepared",
         address: oracledAddress,
         abi: abi,
         functionName: "confrontMap",
-        args: [params._registryRuralIPFS, params._registryRural],
+        args: [params._registryRuralIPFS, registryRural],
       });
 
       const txResult = await wait().then((txResult: WriteCallbackPromise) => {
@@ -186,7 +134,5 @@ export class ConsultGovWrites {
     } catch (errorTx) {
       console.log(errorTx);
     }
-
-    return new Error() as never;
   };
 }
