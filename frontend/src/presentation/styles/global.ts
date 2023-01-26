@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
   body{
     font-family: "Poppins";
     font-weight: 400;
-    background: url('/background.svg');
+    background: ${(props) => props.theme.background};
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
