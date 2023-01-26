@@ -1,0 +1,17 @@
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.file{
+ padding: 1rem;
+ background-color: rgba(255, 255, 255, 0.43);
+ border-radius: 15px;
+ font-size: 1rem;
+ color: #fff;
+}

@@ -14,7 +14,7 @@ const { contractAddress } = BlockImobContractConfig;
 export class BlockImobWrites {
   mint = async ({
     address,
-    oficio,
+    tokenURI,
     comarcaimovel,
     registro,
   }: MintArgsInterface): Promise<TransactionReceipType | undefined> => {
@@ -24,7 +24,7 @@ export class BlockImobWrites {
         address: contractAddress,
         abi: abi,
         functionName: "mint",
-        args: [address, oficio, comarcaimovel, registro],
+        args: [address, tokenURI, comarcaimovel, registro],
       });
 
       const txResult = await wait().then((txResult: WriteCallbackPromise) => {

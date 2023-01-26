@@ -6,6 +6,7 @@ import { Query } from "@main/factories/pages/Query";
 import { Register } from "@main/factories/pages/Register";
 import { Sellers } from "@main/factories/pages/Sellers";
 import { Fiis } from "@main/factories/pages/Fiis";
+import { Mint } from "@main/factories/pages/Mint";
 
 export function Router() {
   return (
@@ -17,6 +18,7 @@ export function Router() {
         <Route path="/query" element={<Query />} />
         <Route path="/sale-and-assignment" element={<Sellers />} />
         <Route path="/fiis" element={<Fiis />} />
+        <Route path="/mint" element={<Mint />} />
       </Route>
     </Routes>
   );

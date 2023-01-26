@@ -53,7 +53,7 @@ export type TransactionReceipType = {
 `mint` function. */
 export interface MintArgsInterface {
   address: `0x${string}`;
-  oficio: string;
+  tokenURI: string;
   comarcaimovel: string;
   registro: BigNumber;
 }

@@ -53,11 +53,12 @@ export const Register: FunctionComponent = () => {
 
   async function mint() {
     const registro = BigNumber.from(registroValue);
+    const tokenURI = "";
     if (address) {
       await blockWriteInstance
         .mint({
           address,
-          oficio,
+          tokenURI,
           comarcaimovel,
           registro,
         })
