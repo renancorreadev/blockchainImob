@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const InfoMobWrapper = styled.div`
-  background: url(/public/effect.svg) no-repeat bottom left;
   opacity: 1;
   width: 100%;
   height: 100%;
-  padding: 5rem 0rem;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const InfoMobContainer = styled.div`
@@ -17,4 +21,12 @@ export const InfoMobContainer = styled.div`
   justify-content: center;
 
   color: ${(props) => props.theme["white"]};
+
+  padding: 5rem 0rem;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;

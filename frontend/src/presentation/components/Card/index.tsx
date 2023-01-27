@@ -1,5 +1,6 @@
 import React from "react";
 import { Subtitle, Text, Title } from "../Calligraphy";
+
 import {
   CardContainer,
   CardImage,
@@ -47,7 +48,10 @@ export const Card: React.FC<CardPropsType> = ({
           <CardTextContainer>
             <Title>{title}</Title>
             <Subtitle>{subtitle}</Subtitle>
-            <Text>{text}</Text>
+            {text &&
+              text
+                .split("\n")
+                .map((item, key) => <Text key={key}>{item}</Text>)}
           </CardTextContainer>
         )}
       </CardContainer>

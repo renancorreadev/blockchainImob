@@ -7,6 +7,7 @@ export const Home: React.FC = () => {
     <HomeWrapper>
       <HomeBanner />
       <InfoMob variation="imobInfo" />
+      <InfoMob variation="govinfo" />
     </HomeWrapper>
   );
 };
