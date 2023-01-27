@@ -12,7 +12,7 @@ export const HeaderMobileWrapper = styled.div`
 `;
 
 export const LogoMobile = styled.img`
-  width: 80px;
+  width: 110px;
   height: auto;
   padding: 0.4rem;
 `;
