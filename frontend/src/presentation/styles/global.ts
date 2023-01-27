@@ -45,6 +45,42 @@ export const GlobalStyle = createGlobalStyle`
     right: 0 !important;
   }
 
+  @media screen and (max-width: 768px) {
+    .mySwiper{
+      flex-direction: column;
+    }
+
+    .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+
+      margin: 0;
+      width: 100%;
+      position: relative;
+      top: -5rem;
+    }
+
+    .swiper-slide h1 {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .swiper-slide p {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .swiper-slide button {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
   .swiper-pagination-bullet {
     background: #FFFFFF;
     opacity: 0.4;
@@ -80,24 +116,32 @@ export const GlobalStyle = createGlobalStyle`
     border: none !important;
     overflow: unset !important;
   }
-:root {
-  /* fonts */
-  --font-font-awesome-6-pro: "Font Awesome 6 Pro";
-  --font-archivo: Archivo;
-  --font-poppins: Poppins;
-  --font-audiowide: Audiowide;
 
-  /* font sizes */
-  --font-size-sm: 19.28px;
-  --font-size-base: 19.47px;
+  @media screen and (max-width: 768px) {
+    .swiper-wrapper > div.swiper-slide.swiper-slide-active > h1{
+      font-size: 2.5rem;
+      gap: 0;
+      line-height: 3rem;
+    }
+  }
 
-  /* Colors */
-  --color-white: #fff;
-  --color-gray-100: rgba(0, 0, 0, 0.12);
+  :root {
+    /* fonts */
+    --font-font-awesome-6-pro: "Font Awesome 6 Pro";
+    --font-archivo: Archivo;
+    --font-poppins: Poppins;
+    --font-audiowide: Audiowide;
 
-  /* border radiuses */
-  --br-md: 34px;
-}
+    /* font sizes */
+    --font-size-sm: 19.28px;
+    --font-size-base: 19.47px;
 
+    /* Colors */
+    --color-white: #fff;
+    --color-gray-100: rgba(0, 0, 0, 0.12);
+
+    /* border radiuses */
+    --br-md: 34px;
+  }
 
 `;

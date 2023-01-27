@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, Mousewheel } from "swiper";
+import { BrowserView, MobileView } from "react-device-detect";
 
 type CarouselItem = {
   title: React.ElementType;
@@ -25,26 +26,54 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
   }
 
   return (
-    <Swiper
-      direction={"vertical"}
-      slidesPerView={1}
-      spaceBetween={30}
-      mousewheel={true}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Mousewheel, Pagination]}
-      className="mySwiper"
-    >
-      {itemsToRender.map((items, index) => {
-        return (
-          <SwiperSlide key={index}>
-            <items.title />
-            <items.textContent />
-            <items.button />
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
+    <React.Fragment>
+      <BrowserView>
+        <Swiper
+          direction={"vertical"}
+          slidesPerView={1}
+          spaceBetween={30}
+          mousewheel={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Mousewheel, Pagination]}
+          className="mySwiper"
+        >
+          {itemsToRender.map((items, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <items.title />
+                <items.textContent />
+                <items.button />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </BrowserView>
+
+      <MobileView>
+        <Swiper
+          direction={"vertical"}
+          slidesPerView={1}
+          spaceBetween={30}
+          mousewheel={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Mousewheel, Pagination]}
+          className="mySwiper"
+        >
+          {itemsToRender.map((items, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <items.title />
+                <items.textContent />
+                <items.button />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </MobileView>
+    </React.Fragment>
   );
 };

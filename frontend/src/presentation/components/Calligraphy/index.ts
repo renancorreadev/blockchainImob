@@ -5,6 +5,10 @@ export const Title = styled.h1`
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 export const Subtitle = styled.h2`
@@ -20,4 +24,8 @@ export const Text = styled.p`
   margin-bottom: 1rem;
 
   padding: 0 6rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 1rem;
+  }
 `;

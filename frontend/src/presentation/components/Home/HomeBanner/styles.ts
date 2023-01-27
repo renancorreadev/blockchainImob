@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HomeWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-top: 6rem;
 
   @media (max-width: 720px) {
     flex-direction: column;
@@ -17,7 +18,8 @@ export const InfoWrapper = styled.div`
 
   @media (max-width: 720px) {
     width: 100%;
-    max-width: 320px;
+    max-width: 100%;
+    margin: 0;
   }
 `;
 export const ImageWrapper = styled.div`
@@ -78,4 +80,19 @@ export const Image = styled.img`
   position: relative;
   top: 44px;
   bottom: 0;
+`;
+
+export const LineWrapper = styled.div`
+  width: 100%;
+  padding: 0 1rem;
+  position: relative;
+
+  bottom: 3rem;
+`;
+export const Line = styled.div`
+  width: 100%;
+  height: 2px;
+  display: flex;
+
+  background: rgba(255, 255, 265, 0.6);
 `;

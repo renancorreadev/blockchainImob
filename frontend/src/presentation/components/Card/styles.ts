@@ -8,7 +8,7 @@ export const CardImage = styled.img`
   width: 858px;
 
   @media screen and (max-width: 768px) {
-    width: 300px;
+    width: 100%;
   }
 `;
 
