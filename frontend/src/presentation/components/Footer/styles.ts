@@ -67,7 +67,9 @@ export const FooterLinkTitle = styled.h3`
   display: flex;
   align-items: start;
 `;
-export const FooterLink = styled.a``;
+export const FooterLink = styled.a`
+  text-decoration: none;
+`;
 
 export const LineWrapper = styled.div`
   display: flex;
