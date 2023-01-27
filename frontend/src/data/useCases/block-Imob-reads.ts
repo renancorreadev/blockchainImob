@@ -24,7 +24,7 @@ import {
 import {
   BlockImobReadCallsInterface,
   GetIsApproveForAllType,
-} from "../protocols/block-Imob-reads-protocol";
+} from "../protocols/block-imob-reads-protocol";
 import { BlockImobError } from "@infra/errors/block-imob-error";
 
 const address = BlockImobContractConfig.contractAddress as string;

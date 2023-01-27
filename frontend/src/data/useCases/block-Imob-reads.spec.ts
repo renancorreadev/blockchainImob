@@ -1,6 +1,6 @@
 import { describe, expect, vi } from "vitest";
 import { accounts } from "@test/utils/mockProvider";
-import { BlockImobReadCalls } from "./block-Imob-reads";
+import { BlockImobReadCalls } from "./block-imob-reads";
 import { BigNumber } from "ethers";
 
 type MakeSutTypes = {
