@@ -40,7 +40,9 @@ export const InfoMob: React.FC<InfoMobProps> = ({ variation }) => {
       {variation === "imobInfo" && (
         <InfoMobContainer
           style={{
-            background: "url(/effect_reverse.png) no-repeat bottom rigth",
+            background: "url(/effect_reverse.png) no-repeat bottom",
+            backgroundSize: "cover",
+            backgroundPositionX: "-500px",
           }}
         >
           <animated.div
@@ -68,6 +70,8 @@ export const InfoMob: React.FC<InfoMobProps> = ({ variation }) => {
         <InfoMobContainer
           style={{
             background: "url(/effect5.svg) no-repeat top right ",
+            backgroundSize: "cover",
+            backgroundPositionX: "500px",
             width: "100%",
             height: "100%",
           }}
@@ -75,7 +79,7 @@ export const InfoMob: React.FC<InfoMobProps> = ({ variation }) => {
           <Card
             cardType="text"
             title="Governança e controle de registros"
-            subtitle="O Futuro do setor imobiliário"
+            subtitle="Oráculo de controle e registro"
             text="A governança é uma parte crítica de qualquer sistema descentralizado, incluindo contratos inteligentes. Ela é responsável por garantir que as regras e procedimentos estabelecidos sejam seguidos e que as decisões sejam tomadas de forma justa e transparente.
 
           Uma das principais funcionalidades do contrato de governança é a verificação de mapas rurais. Ele possui uma variável chamada 'mapRegular' que armazena o mapa rural correto e é comparado com o mapa inserido pelos oráculos. Se o mapa inserido for igual ao mapRegular, o imóvel rural é considerado regular, caso contrário, é considerado irregular.
