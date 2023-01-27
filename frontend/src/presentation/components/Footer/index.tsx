@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
       </MobileView>
 
       <FooterSectionEnd>
-        <FooterInc>© 2022 Omnes BlockChain Tech, Inc. - Versão 0.001</FooterInc>
+        <FooterInc>© 2023 Omnes BlockChain Tech, Inc. - Versão 0.001</FooterInc>
       </FooterSectionEnd>
     </FooterWrapper>
   );

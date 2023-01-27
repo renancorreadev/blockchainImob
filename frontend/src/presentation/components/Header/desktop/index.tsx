@@ -12,7 +12,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 import { ConsultIcon } from "../icons/ConsultIcon";
 import { HomeIcon } from "../icons/HomeIcon";
-import { FillsIcon } from "../icons/FillsIcon";
+// import { FillsIcon } from "../icons/FillsIcon";
 import { RegisterIcon } from "../icons/RegisterIcon";
 import { SellerIcon } from "../icons/SellersIcon";
 
@@ -46,12 +46,12 @@ export const HeaderDesktop: React.FC = () => {
             <span>VENDA E CESSÃO</span>
           </NavItem>
         </NavLink>
-        <NavLink to="/fiis" title="FIIS">
+        {/* <NavLink to="/fiis" title="FIIS">
           <NavItem>
             <FillsIcon />
             <span>FIIS</span>
           </NavItem>
-        </NavLink>
+        </NavLink> */}
       </NavWrapper>
 
       <WalletConnectWrapper>
