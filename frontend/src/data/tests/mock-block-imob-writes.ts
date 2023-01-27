@@ -1,4 +1,8 @@
-import { ApproveArgsInterface, TransactionReceipType } from "@data/protocols";
+import {
+  ApproveArgsInterface,
+  TransactionReceipType,
+} from "@data/protocols/block-imob-writes-protocol";
+
 import { BlockImobWrites } from "@data/useCases";
 import { BigNumber } from "ethers";
 import { vi } from "vitest";
