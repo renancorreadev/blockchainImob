@@ -1,12 +1,17 @@
 import React from "react";
+import { isMobile, MobileView } from "react-device-detect";
+
 import {
   FooterInc,
+  FooterLine,
   FooterLink,
   FooterLinkTitle,
   FooterLinkWrapper,
   FooterSection,
   FooterSectionEnd,
   FooterWrapper,
+  LineMobile,
+  LineWrapper,
   LogoAnchory,
   LogoFile,
   LogoWrapper,
@@ -18,10 +23,21 @@ import Celo from "@assets/celo.png";
 export const Footer: React.FC = () => {
   return (
     <FooterWrapper>
+      <MobileView>
+        <LineWrapper>
+          <FooterLine />
+        </LineWrapper>
+      </MobileView>
+
       <FooterSection>
         <LogoWrapper>
           <LogoAnchory href="/">
-            <LogoFile src={Logo} height={130} width={"auto"} alt="Logo image" />
+            <LogoFile
+              src={Logo}
+              height={isMobile ? 80 : 130}
+              width={isMobile ? 80 : 130}
+              alt="Logo image"
+            />
           </LogoAnchory>
         </LogoWrapper>
 
@@ -40,6 +56,12 @@ export const Footer: React.FC = () => {
           </FooterLink>
         </FooterLinkWrapper>
 
+        <MobileView>
+          <LineWrapper>
+            <LineMobile />
+          </LineWrapper>
+        </MobileView>
+
         <FooterLinkWrapper>
           <FooterLinkTitle>Sobre o Projeto</FooterLinkTitle>
           <FooterLink href="/content-policy/">
@@ -54,6 +76,12 @@ export const Footer: React.FC = () => {
             <p>BlockImob</p>
           </FooterLink>
         </FooterLinkWrapper>
+
+        <MobileView>
+          <LineWrapper>
+            <LineMobile />
+          </LineWrapper>
+        </MobileView>
 
         <FooterLinkWrapper>
           <FooterLinkTitle>Redes Sociais</FooterLinkTitle>
@@ -70,6 +98,12 @@ export const Footer: React.FC = () => {
           </FooterLink>
         </FooterLinkWrapper>
 
+        <MobileView>
+          <LineWrapper>
+            <LineMobile />
+          </LineWrapper>
+        </MobileView>
+
         <LogoWrapper>
           <LogoAnchory href="/">
             <LogoFile src={Celo} height={130} width={"auto"} alt="Logo image" />
@@ -77,6 +111,12 @@ export const Footer: React.FC = () => {
           </LogoAnchory>
         </LogoWrapper>
       </FooterSection>
+
+      <MobileView>
+        <LineWrapper>
+          <LineMobile />
+        </LineWrapper>
+      </MobileView>
 
       <FooterSectionEnd>
         <FooterInc>© 2022 Omnes BlockChain Tech, Inc. - Versão 0.001</FooterInc>
