@@ -31,6 +31,8 @@ export const Query: FunctionComponent = () => {
     });
   };
 
+  console.log(resultMatricula);
+
   return (
     <div className={styles.Container}>
       <div className={styles.headerTitle}>
