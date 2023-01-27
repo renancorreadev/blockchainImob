@@ -7,6 +7,7 @@ import Token from "@assets/imob/imob.png";
 import TokenB from "@assets/imob/imob2.png";
 import Note from "@assets/imob/note.png";
 import { SeparatorLine } from "@presentation/components/Calligraphy";
+import { isMobile } from "react-device-detect";
 
 interface InfoMobProps {
   variation: VariationPropType;
@@ -44,7 +45,7 @@ export const InfoMob: React.FC<InfoMobProps> = ({
 
   return (
     <React.Fragment>
-      <SeparatorLine margin={0} />
+      <SeparatorLine marginTop={isMobile ? 2.8 : 0} />
 
       <InfoMobWrapper
         backgroundDesktop={backgroundDesktop}

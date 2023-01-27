@@ -10,7 +10,7 @@ import {
 } from "./styles";
 import Background from "@assets/homebg.svg";
 import { Carousel } from "@presentation/components/Carousel";
-import { isMobile, BrowserView, MobileView } from "react-device-detect";
+import { isMobile, BrowserView } from "react-device-detect";
 import { SeparatorLine } from "@presentation/components/Calligraphy";
 
 // import { BlockImobReadCalls } from "@data/useCases/block-Imob-reads";

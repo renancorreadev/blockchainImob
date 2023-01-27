@@ -75,6 +75,7 @@ export const LineWrapper = styled.div`
   display: flex;
   width: 100%;
   padding: 0 2rem;
+  margin-bottom: 3rem;
 `;
 
 export const LineMobile = styled.div`
