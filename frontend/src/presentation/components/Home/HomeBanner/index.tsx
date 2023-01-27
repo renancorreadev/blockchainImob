@@ -7,12 +7,11 @@ import {
   TextContent,
   Button,
   Image,
-  Line,
-  LineWrapper,
 } from "./styles";
 import Background from "@assets/homebg.svg";
 import { Carousel } from "@presentation/components/Carousel";
 import { isMobile, BrowserView, MobileView } from "react-device-detect";
+import { SeparatorLine } from "@presentation/components/Calligraphy";
 
 // import { BlockImobReadCalls } from "@data/useCases/block-Imob-reads";
 
@@ -115,21 +114,20 @@ export const HomeBanner: React.FC = () => {
   ];
 
   return (
-    <HomeWrapper>
-      <MobileView>
-        <LineWrapper>
-          <Line />
-        </LineWrapper>
-      </MobileView>
-      <InfoWrapper>
-        <Carousel items={InfoItems} />
-      </InfoWrapper>
+    <React.Fragment>
+      <SeparatorLine marginTop={1} />
 
-      <BrowserView>
-        <ImageWrapper>
-          <Image src={Background} />
-        </ImageWrapper>
-      </BrowserView>
-    </HomeWrapper>
+      <HomeWrapper>
+        <InfoWrapper>
+          <Carousel items={InfoItems} />
+        </InfoWrapper>
+
+        <BrowserView>
+          <ImageWrapper>
+            <Image src={Background} />
+          </ImageWrapper>
+        </BrowserView>
+      </HomeWrapper>
+    </React.Fragment>
   );
 };

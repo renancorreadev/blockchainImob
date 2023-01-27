@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const HomeWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 6rem;
+
+  background: url(/effect5.svg) no-repeat bottom right;
+  background-size: 100% 100%;
 
   @media (max-width: 720px) {
     flex-direction: column;
@@ -25,6 +27,11 @@ export const InfoWrapper = styled.div`
 export const ImageWrapper = styled.div`
   width: 70%;
   margin-top: 33px;
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    margin-top: 62px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -78,7 +85,7 @@ export const Image = styled.img`
   height: 100%;
   display: block;
   position: relative;
-  top: 44px;
+  top: 60px;
   bottom: 0;
 `;
 

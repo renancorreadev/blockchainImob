@@ -29,3 +29,27 @@ export const Text = styled.p`
     padding: 0 1rem;
   }
 `;
+
+export const SeparatorWrapper = styled.div``;
+
+interface SeparatorLineProps {
+  marginTop?: number;
+  marginBottom?: number;
+  marginLeft?: number;
+  marginRight?: number;
+}
+export const SeparatorLine = styled.div<SeparatorLineProps>`
+  width: 100%;
+  height: 3px;
+  margin-top: ${(props) => props.marginTop}rem;
+  margin-bottom: ${(props) => props.marginBottom}rem;
+  margin-left: ${(props) => props.marginLeft}rem;
+  margin-right: ${(props) => props.marginRight}rem;
+
+  background: linear-gradient(
+    238deg,
+    rgba(35, 36, 0, 0.6012780112044818) 12%,
+    rgba(65, 5, 98, 0.8337710084033614) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+`;

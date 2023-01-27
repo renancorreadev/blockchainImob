@@ -82,7 +82,7 @@ export const LineMobile = styled.div`
   width: 100%;
   height: 1px;
 
-  margin: 3rem 0;
+  margin-top: 1rem;
 `;
 
 export const FooterLine = styled.div`
