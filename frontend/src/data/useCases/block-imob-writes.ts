@@ -7,7 +7,7 @@ import {
   ApproveArgsInterface,
   TransactionReceipType,
   WriteCallbackPromise,
-} from "@data/protocols";
+} from "@data/protocols/block-imob-writes-protocol";
 
 const { contractAddress } = BlockImobContractConfig;
 
