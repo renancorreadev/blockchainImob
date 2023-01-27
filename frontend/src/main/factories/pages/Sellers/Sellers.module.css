@@ -19,10 +19,15 @@
   display: inline-block;
 }
 .conheaOsImveisDaUnio {
-  top: 885px;
-  left: 604px;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 2rem;
+  padding-left: 2rem;
+  padding-right: 6rem;
+
+  width: 100%;
   font-weight: 500;
-  width: 738px;
+
 }
 .vENDAECESSO1 {
   top: 119px;

@@ -50,14 +50,12 @@ export const Query: FunctionComponent = () => {
             className={styles.input}
             placeholder="Numero da Matricula: "
           />
-
           <button className={styles.group3} onClick={handleConsult}>
             <span>Consultar</span>
           </button>
-
-          {/** Returns */}
+          {/* * Returns
           {resultMatricula && <p>Imovel esta regularizado</p>}
-          {!resultMatricula && <p>Imovel não esta regularizado</p>}
+          {!resultMatricula && <p>Imovel não esta regularizado</p>} */}
         </div>
         <div className={styles.Quad2}>
           <input

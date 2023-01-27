@@ -5,12 +5,7 @@ export const Sellers: FunctionComponent = () => {
   return (
     <div className={styles.vENDAECESSO}>
       <img className={styles.effectIcon} alt="" src="/effect.svg" />
-      <div className={styles.conheaOsImveisDaUnio}>
-        Conheça os imóveis da união à venda ou disponíveis para cessão de uso.
-        Desburocratização e tecnologia aliados a confiança de imóveis regulares
-        e verificados por oráculo de entes governamentais.
-      </div>
-      <div className={styles.vENDAECESSO1}>VENDA E CESSÃO</div>
+
       <div className={styles.groupDiv}>
         <div className={styles.rectangleDiv} />
         <div className={styles.rectangleDiv1} />
@@ -75,6 +70,12 @@ export const Sellers: FunctionComponent = () => {
             <span className={styles.span}> R$ 980 mil (Creal)</span>
           </p>
         </div>
+      </div>
+
+      <div className={styles.conheaOsImveisDaUnio}>
+        Conheça os imóveis da união à venda ou disponíveis para cessão de uso.
+        Desburocratização e tecnologia aliados a confiança de imóveis regulares
+        e verificados por oráculo de entes governamentais.
       </div>
     </div>
   );

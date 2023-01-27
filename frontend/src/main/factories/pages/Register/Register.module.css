@@ -53,7 +53,7 @@
 }
 .rectangleDiv {
   border-radius: var(--br-md);
-  background-color: var(--color-gray-100);
+  background: linear-gradient( 238deg, rgba(35, 36, 0, 0.6012780112044818) 12%, rgba(65, 5, 98, 0.8337710084033614) 35%, rgba(0, 212, 255, 1) 100% );
   backdrop-filter: blur(25px);
   width: 492px;
   height: 484px;
@@ -413,7 +413,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: ;
+  background-color: #000; ;
   color: #fff;
 }
 

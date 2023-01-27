@@ -112,7 +112,7 @@ export const Register: FunctionComponent = () => {
                 name="numberOficio"
                 required
                 className={styles.input}
-                placeholder="Name (4 to 8 characters):"
+                placeholder="Insira o IPFS ou  Token"
               />
             </div>
 
