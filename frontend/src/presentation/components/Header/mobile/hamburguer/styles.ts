@@ -47,6 +47,7 @@ export const HamburguerLi = styled.li`
 
   a {
     text-decoration: none;
+    color: #000;
   }
 
   svg path {
