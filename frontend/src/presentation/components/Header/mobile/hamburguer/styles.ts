@@ -22,6 +22,7 @@ export const CloseButton = styled.button`
   justify-content: flex-end;
   background-color: transparent;
   border: none;
+  margin-top: 1rem;
 `;
 
 export const HamburguerUl = styled.ul`
