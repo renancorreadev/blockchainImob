@@ -17,6 +17,7 @@ export const InfoWrapper = styled.div`
 
   @media (max-width: 720px) {
     width: 100%;
+    max-width: 320px;
   }
 `;
 export const ImageWrapper = styled.div`

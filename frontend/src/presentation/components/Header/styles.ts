@@ -7,6 +7,10 @@ export const HeaderWrapper = styled.header`
   background-color: transparent;
   width: 100%;
   height: 100px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const NavWrapper = styled.nav`

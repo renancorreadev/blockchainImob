@@ -4,6 +4,10 @@ export const FooterWrapper = styled.footer`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const FooterSection = styled.div`
