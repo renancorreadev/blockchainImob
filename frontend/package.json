@@ -35,7 +35,7 @@
     "@fontsource/poppins": "^4.5.10",
     "@rainbow-me/rainbowkit": "^0.8.0",
     "@react-spring/web": "^9.6.1",
-    "@vitejs/plugin-react": "^3.0.0",
+    "@vitejs/plugin-react": "^4.1.1",
     "canvas-confetti": "^1.6.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.2",
@@ -45,9 +45,9 @@
     "react-router-dom": "^6.4.5",
     "react-spinners": "^0.13.7",
     "react-spring": "^9.6.1",
-    "styled-components": "^5.3.6",
+    "styled-components": "^6.1.0",
     "swiper": "^8.4.5",
-    "wagmi": "^0.8.10"
+    "wagmi": "^0.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
