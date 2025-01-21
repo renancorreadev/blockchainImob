@@ -1,3 +1,4 @@
+
 <div align="center">
 
 [![Build Status](https://travis-ci.org/rmanguinho/clean-react.svg?branch=master)](https://travis-ci.org/rmanguinho/clean-react)
@@ -8,86 +9,57 @@
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 </div>
 
-
 <div align='center'>
 
-# **Gerenciamento de Imóveis baseado em Blockchain**
+# **Blockchain-Based Real Estate Management**
 </div>
 
+[![alt text](./public/capa.png "Prototype Link")](https://www.udemy.com/course/react-com-mango/?referralCode=552F88858EAE76346C8B)
 
+This system leverages blockchain technology for real estate management using the ERC721 and ERC4907 protocols, and tokenization for NFTs as registration and cadastral modifications.
 
-[![alt text](./public/capa.png "Link para Protótipo")](https://www.udemy.com/course/react-com-mango/?referralCode=552F88858EAE76346C8B)
+The goal is to implement a property registration management system using modern technologies. The back-end is developed in Solidity along with Ethers, Hardhat, TypeScript, and Solidity compilers.
 
-Esse sistema faz o uso de blockChain no gerenciamento de imoveis usando o protocolo ERC721, erc4907 e tokenização para NFTs como registro e alterações cadastrais.
+For the front-end, various methodologies were applied, such as a well-defined and decoupled architecture using TDD (Test-Driven Development) as a work methodology, Clean Architecture to distribute responsibilities across layers, always following SOLID, DRY, YAGNI, and KISS principles and applying Design Patterns to solve common problems.
 
-O objetivo é implementar um sistema gerenciador de Registros Imoveis usando as tecnologias recentes. O Back-End desenvolvido em solidity juntamente com ethers, hardhat, typescript e compiladores em linguagem Solidity. 
-
-Para Front-End foi desenvolvida utilizando diversos metodologias como uma arquitetura bem definida e desacoplada, utilizando TDD (programação orientada a testes) como metodologia de trabalho, Clean Architecture para fazer a distribuição de responsabilidades em camadas, sempre seguindo os princípios do SOLID, DRY, YAGNI, KISS e aplicando Design Patterns para resolver alguns problemas comuns.
 <br /><br />
 
 <div align="center" style="width: 100%; display: block;">
-
  <img src="./public/celo.png" width="300px" heigth="300px" />
 </div>
 
-
-
 </div>
-
 
 <div style="padding: 0 5rem;">
 
+# Index
 
-# Indice
+- [About](#HowItWorks)
+- [Applied Methodologies](#AppliedMethodologies)
+- [Technologies Used](#TechnologiesUsed)
+- [How to run the project](#Execute)
 
-- [Sobre](#ComoFunciona)
-- [Metodologias utilizadas](#MetodologiasUtilizadas)
-- [Tecnologias Utilizadas](#TecnologiasUtilizadas)
-- [Como executar o projeto](#Execute)
+<div id="HowItWorks">
 
-<div id="ComoFunciona">
-
-## 🔖&nbsp; Como Funciona?
+## 🔖&nbsp; How It Works?
 </div>
 
+BlockImobGov is a regularity consultation platform based on oracles, registration, and management of government properties registered on the blockchain. It allows users to invest and track their contracts with the government.
 
-A BlockImobGov é uma plataforma de consulta de regularidade
-baseada em oráculo, registro e gestão de imóveis da União
-registrados em Blockchain que permite aos usuários investir e
-acompanhar seus contratos com a União.
-Como funciona : 
-REGISTRO
-Lista de endereços cadastrados na blockchain e implementação de
-multisig do gov. Criação de NFT (Tokens não fungíveis) com definições
-dos imóveis registrados por entes autorizados. Toda a gestão dos imóveis
-registrados em um sistema público e auditável.
-CONSULTA
-Verificação de regularidade e dados dos imóveis. Toda os dados dos
-imóveis passa pela verificação dos validadores no oráculo dos entes
-governamentais para garantir a veracidade das informações. Possibilidade
-de solicitar a confrontação de mapas referente a geolocalização de
-imóveis rurais.
-VENDA E CESSÃO
-Após a confirmação que os imóveis estão regulares eles estarão hábeis
-para a venda ou cessão de uso. Todo o valor será pago em cReal
-(Criptomoeda lastreada em real da blockchain da Celo). O prazo de
-cessão será definido em código e estipulado o pagamento por período
-especificado em contrato, já com o abatimento dos tributos.
-FII TOKENIZADO
-Com todos os imóveis registrados e regularizado na blockchain, assim
-tendo todas as definições essenciais on-chain e metadados de cada
-imóvel. O sistema possibilitará a tokenização dos fundos imobiliários com
-todos os dados referente aos imóveis de cada fundo e sua categoria.
+How it works:
+- **REGISTRATION:** List of addresses registered on the blockchain and implementation of government multisig. Creation of NFTs (Non-Fungible Tokens) defining registered properties by authorized entities. Management is public and auditable.
+- **CONSULTATION:** Verification of the regularity and data of properties, validated through government oracles to ensure data authenticity. Request for map verification regarding the geolocation of rural properties.
+- **SALE AND LEASE:** After confirmation of the property's regularity, they will be eligible for sale or lease. All transactions will be conducted in cReal (Celo blockchain cryptocurrency backed by the Brazilian Real). The lease period will be defined in the contract, including tax deductions.
+- **TOKENIZED REIT:** Once all properties are registered and regularized on the blockchain, the system will enable the tokenization of real estate funds with all property data and categorization.
 
-BlockImobGov Acelerando os negócios imobiliários do Governo!
+BlockImobGov Accelerating Government Real Estate Transactions!
 
 ---
 
-<div id="MetodologiasUtilizadas">
+<div id="AppliedMethodologies">
 
- ## ㊎ Metodologias utilizadas para desenvolvimento
+ ## ㊎ Applied Methodologies
 </div>
-
 
 * TDD
 * Clean Architecture
@@ -103,7 +75,7 @@ BlockImobGov Acelerando os negócios imobiliários do Governo!
 * Continuous Delivery
 * Continuous Deployment
 
-## 📚 Princípios
+## 📚 Principles
 
 * Single Responsibility Principle (SRP)
 * Open Closed Principle (OCP)
@@ -128,11 +100,10 @@ BlockImobGov Acelerando os negócios imobiliários do Governo!
 * Builder
 * Proxy
 
-<div id="TecnologiasUtilizadas">
+<div id="TechnologiesUsed">
 
-## 🚀 Tecnologias utilizadas
+## 🚀 Technologies Used
 </div>
-
 
 * [Typescript](https://www.typescriptlang.org/)
 * [React](https://www.typescriptlang.org/)
@@ -147,61 +118,56 @@ BlockImobGov Acelerando os negócios imobiliários do Governo!
 * [Lint Staged](https://github.com/okonet/lint-staged)
 * [Eslint](https://eslint.org/)
 * [Celo Blockchain](https://celo.org/)
-  
----
+
 ---
 
 <div id="Execute">
 
-## 🗂 Como executar o Client (Front-End)
+## 🗂 How to Run the Client (Front-End)
 </div>
 
 ```bash
-
-    # Clonar o repositório
+    # Clone the repository
     $ git clone https://github.com/renancorreadev/blockchainImob.git
 
-    # Entrar no diretório
+    # Enter the directory
     $ cd frontend
 
-    # Instalar as dependências
+    # Install dependencies
     $ yarn install
 
-    # Iniciar o projeto
+    # Start the project
     $ yarn dev
 ```
 
 ---
 
-## 🗂 Como compilar os contratos e realizar deploy (back-end)
+## 🗂 How to Compile Contracts and Deploy (Back-End)
 
 ```bash
-
-    # Clonar o repositório
+    # Clone the repository
     $ git clone https://github.com/renancorreadev/blockchainImob.git
 
-    # Entrar no diretório
+    # Enter the directory
     $ cd backend
 
-    # Instalar as dependências
+    # Install dependencies
     $ yarn install
 
-    # Iniciar o projeto
+    # Compile the project
     $ yarn compile
 
-    # Deployar os contratos
+    # Deploy contracts
     $ yarn deploy
 
-    # Verificar os contratos
+    # Verify contracts
     $ yarn verify
 ```
-
 ---
 
 <p align="center"> 
 
-    Desenvolvido por Renan César
+    Developed by Renan César
 </p>
 
 </div>
-
