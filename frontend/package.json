@@ -34,7 +34,7 @@
     "@fontsource/audiowide": "^4.5.9",
     "@fontsource/poppins": "^4.5.10",
     "@rainbow-me/rainbowkit": "^0.8.0",
-    "@react-spring/web": "^9.6.1",
+    "@react-spring/web": "^9.7.2",
     "@vitejs/plugin-react": "^3.0.0",
     "canvas-confetti": "^1.6.0",
     "react": "^18.2.0",
