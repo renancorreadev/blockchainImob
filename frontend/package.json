@@ -35,7 +35,7 @@
     "@fontsource/poppins": "^4.5.10",
     "@rainbow-me/rainbowkit": "^0.8.0",
     "@react-spring/web": "^9.6.1",
-    "@vitejs/plugin-react": "^3.0.0",
+    "@vitejs/plugin-react": "^4.4.0",
     "canvas-confetti": "^1.6.0",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.2",
